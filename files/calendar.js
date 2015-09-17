@@ -1,3 +1,3 @@
-Function Calendar() {
+function Calendar() {
 
 }
