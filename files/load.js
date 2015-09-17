@@ -1,7 +1,6 @@
 function loadIt() {
-  var tableDiv = elementFunctions.getElement("tableDiv");
   var table = tableMaker.createTable();
-  tableDiv.appendChild(table);
+  elementFunctions.append("tableDiv", table);
 }
 
 window.addEventListener("load", loadIt);

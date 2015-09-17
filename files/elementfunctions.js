@@ -33,5 +33,14 @@ var elementFunctions = {
     } else if (typeof type == 'object') { // element node
       type.addEventListener(event, handler);
     }
-}
+  },
+
+  append: function(parent, child) {
+    if (typeof parent === "string")
+      parent = document.getElementById(parent);
+    if (typeof child === "string")
+      child = document.getElementById(child);
+
+    parent.appendChild(child);
+  }
 }
