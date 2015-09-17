@@ -1,10 +1,10 @@
-function Day(date, month, year) {
+function Day(year, month, date, content) {
   this.date = date;
   this.month = month;
   this.year = year;
-  this.dateInstance = this.getInstance(date, month, year);
+  this.instance = this.getInstance(year, month, date);
 }
 
-Day.prototype.getInstance = function(date, month, year) {
+Day.prototype.getInstance = function(year, month, date) {
   return new Date(year, month, date);
 }
