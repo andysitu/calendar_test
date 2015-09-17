@@ -7,5 +7,9 @@ function tester() {
   var nextDay = test.makeNextDay();
   assertion = nextDay.date === 18 && nextDay.day === 5;
   console.assert(assertion, nextDay);
+
+  var month = new Month(2015, 8);
+  month.makeDays();
+  console.assert(month.days.length === 30 && month.days[0].day == 2);
 }
 
