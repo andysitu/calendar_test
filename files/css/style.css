@@ -1,0 +1,19 @@
+table {
+  border-collapse: collapse;
+  padding: 0;
+}
+
+td, th {
+  border: solid thin gray;
+}
+
+td {
+  background-color: pink;
+  height: 120px;
+  width: 200px;
+}
+
+th {
+  background-color: green;
+  height: 20px;
+}
