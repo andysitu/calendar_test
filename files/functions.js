@@ -27,7 +27,7 @@ function map(obj, callback, context) {
   } else if (Object.prototype.toString.call(obj) == '[object Array]') {
     return obj.map(callback, context);
   } else { throw "map was given a non-object"; }
-}
+  }
 
 function run(callback, end, start, increment, context) {
 // Runs a function x number of times (end).
@@ -47,28 +47,3 @@ function run(callback, end, start, increment, context) {
     }
   } else { throw "Error with run"; }
 }
-
-function addHandler(type, event, handler) {
-// Adds an event handler to document by type either
-//  being the id or the element.
-  if (typeof type == 'string') { // element Id
-    var element = document.getElementById(type);
-    element.addEventListener(event, handler);
-  } else if (typeof type == 'object') { // element node
-    type.addEventListener(event, handler);
-  }
-}
-
-function getElement(id) {
-  var element = document.getElementById(id);
-  return element;
-}
-
-function createElement(type, id) {
-  // Returns an element and appends an id.
-    if (id === undefined)
-      id = "";
-    var element = document.createElement(type);
-    element.id = id;
-    return element;
-  }
