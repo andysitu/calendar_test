@@ -1,9 +1,9 @@
 function Day(year, month, date, content) {
-  this.date = date;
-  this.month = month;
-  this.year = year;
   this.instance = this.getInstance(year, month, date);
-  this.day = this.getDay();
+  this.date = this.instance.getDate();
+  this.month = this.instance.getMonth();
+  this.year = this.instance.getFullYear();
+  this.day = this.instance.getDay();
 }
 
 Day.prototype.getInstance = function(year, month, date) {
