@@ -8,8 +8,12 @@ function Day(year, month, date, content) {
 
 Day.prototype.getInstance = function(year, month, date) {
   return new Date(year, month, date);
-}
+};
 
 Day.prototype.getDay = function() {
   return this.instance.getDay();
+};
+
+Day.prototype.makeNextDay = function() {
+  return new Day(this.year, this.month, this.date + 1);
 };

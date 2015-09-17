@@ -1,8 +1,11 @@
 function tester() {
   var test = new Day(2015, 8, 17);
-  var instance = test.instance;
-  console.assert(test.date === 17);
-  console.assert(instance.getDate() === 17);
-  console.assert(test.day === 4);
+  var assertion = test.date === 17 && test.instance.getDate() === 17
+    && test.day === 4;
+  console.assert(assertion);
+
+  var nextDay = test.makeNextDay();
+  assertion = nextDay.date === 18 && nextDay.day === 5;
+  console.assert(assertion);
 }
 
