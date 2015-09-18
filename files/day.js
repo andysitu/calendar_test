@@ -1,5 +1,10 @@
-function Day(year, month, date, content) {
-  this.instance = this.getInstance(year, month, date);
+function Day(year, month, date, content) { 
+  Object.defineProperty(this, "instance", {
+    value: this.getInstance(year, month, date);,
+    writable: false,
+    configurable: true,
+    enumerable: false
+  });
   this.date = this.instance.getDate();
   this.month = this.instance.getMonth();
   this.year = this.instance.getFullYear();
