@@ -16,3 +16,9 @@ Month.prototype.makeDays = function() {
     }
   }
 };
+
+Month.prototype.getContent = function() {
+  return this.days.map(function(day) {
+    return day.getContent();
+  });
+};
