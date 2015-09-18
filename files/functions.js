@@ -29,6 +29,11 @@ function map(obj, callback, context) {
   } else { throw "map was given a non-object"; }
   }
 
+function copy(obj) {
+// Returns n object/ array copy.
+  return map(obj, function(value) { return value; })
+}
+
 function run(callback, end, start, increment, context) {
 // Runs a function x number of times (end).
 // Additional parameters changes the for loop.
