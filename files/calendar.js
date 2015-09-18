@@ -1,6 +1,6 @@
 function Calendar() {
-  this.years = {};
-  this.today = null;
+  this.years = {}; // object containing year instances
+  this.today = null; // object containing today's year, month, and date values.
   this.init();
 }
 

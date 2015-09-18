@@ -1,6 +1,6 @@
 function Day(year, month, date, content) { 
   Object.defineProperty(this, "instance", {
-    value: this.getInstance(year, month, date);,
+    value: this.getInstance(year, month, date),
     writable: false,
     configurable: true,
     enumerable: false
