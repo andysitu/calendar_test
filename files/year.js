@@ -10,6 +10,6 @@ Year.prototype.makeMonths = function() {
   }
 }
 
-Year.prototype.getContent = function(month) {
-  return this.months[month].getContent();
+Year.prototype.getMonth = function(month) {
+  return this.months[month].getMonth();
 };

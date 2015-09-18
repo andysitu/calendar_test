@@ -23,6 +23,6 @@ Calendar.prototype.makeToday = function() {
   };
 };
 
-Calendar.prototype.content = function(year, month) {
-  return this.years[year].getContent(month);
+Calendar.prototype.getMonth = function(year, month) {
+  return this.years[year].getMonth(month);
 };
