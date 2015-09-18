@@ -4,6 +4,7 @@ function Day(year, month, date, content) {
   this.month = this.instance.getMonth();
   this.year = this.instance.getFullYear();
   this.day = this.instance.getDay();
+  this.content = (content || "");
 }
 
 Day.prototype.getInstance = function(year, month, date) {
@@ -13,3 +14,7 @@ Day.prototype.getInstance = function(year, month, date) {
 Day.prototype.makeNextDay = function() {
   return new Day(this.year, this.month, this.date + 1);
 };
+
+Day.prototype.getContent = function() {
+  return this.content;
+}
