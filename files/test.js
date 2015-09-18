@@ -10,5 +10,8 @@ function tester() {
 
   var month = new Month(2015, 8);
   console.assert(month.days.length === 30 && month.days[0].day == 2);
+
+  var year = new Year(2016);
+  console.assert(year.months[1].days.length == 29 && year.months.length == 12);
 }
 
