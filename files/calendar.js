@@ -22,3 +22,7 @@ Calendar.prototype.makeToday = function() {
     date: today.getDate()
   };
 };
+
+Calendar.prototype.content = function(year, month) {
+  return this.years[year].getContent(month);
+};
