@@ -1,3 +1,8 @@
+.date {
+  text-align: left;
+  white-space: pre-wrap;
+}
+
 table {
   border-collapse: collapse;
   padding: 0;
@@ -5,9 +10,11 @@ table {
 
 td, th {
   border: solid thin gray;
+  white-space: pre-wrap;
 }
 
 td {
+  vertical-align:top;
   background-color: pink;
   height: 120px;
   width: 200px;
