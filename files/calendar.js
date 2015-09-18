@@ -24,5 +24,8 @@ Calendar.prototype.makeToday = function() {
 };
 
 Calendar.prototype.getMonth = function(year, month) {
+  if (!(year in this.years)) {
+    this.makeYear(year);
+  }
   return this.years[year].getMonth(month);
 };
