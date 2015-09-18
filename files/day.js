@@ -21,5 +21,11 @@ Day.prototype.makeNextDay = function() {
 };
 
 Day.prototype.getContent = function() {
-  return this.content;
+  var day = {},
+    properties = Object.keys(this);
+
+  properties.forEach(function(prop) {
+    day[prop] = this[prop];
+  }, this);
+  return day;
 }
