@@ -12,10 +12,14 @@ Calendar.prototype.init = function() {
 Calendar.prototype.makeYear = function(year) {
   var yearArray = [];
   run(function(month){
-    yearArray.push(new Month(year, month ));
-  }, 12);
+    yearArray.push( this.makeMonth(year, month) );
+  }, 12, 0, 1, this);
   this.years[year] = yearArray;
 };
+
+Calendar.prototype.makeMonth = function(year, month) {
+  return new Month(year, month );
+}
 
 Calendar.prototype.makeToday = function() {
   var today = new Date();
