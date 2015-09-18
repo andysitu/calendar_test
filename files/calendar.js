@@ -10,7 +10,11 @@ Calendar.prototype.init = function() {
 };
 
 Calendar.prototype.makeYear = function(year) {
-  this.years[year] = new Year(year);
+  var yearArray = [];
+  run(function(month){
+    yearArray.push(new Month(year, month ));
+  }, 12);
+  this.years[year] = yearArray;
 };
 
 Calendar.prototype.makeToday = function() {
@@ -27,5 +31,5 @@ Calendar.prototype.getMonth = function(year, month) {
   if (!(year in this.years)) {
     this.makeYear(year);
   }
-  return this.years[year].getMonth(month);
+  return this.years[year][month].getMonth();  
 };
