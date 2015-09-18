@@ -1,6 +1,7 @@
 function Calendar() {
-  this.init();
   this.years = {};
+  this.today = null;
+  this.init();
 }
 
 Calendar.prototype.init = function() {
