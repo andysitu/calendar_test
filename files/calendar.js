@@ -4,11 +4,20 @@ function Calendar() {
 }
 
 Calendar.prototype.init = function() {
-  var today = new Date();
-  var year = today.getFullYear();
-  this.makeYear(year);
+  this.makeToday();
+  this.makeYear(this.today.year);
 };
 
 Calendar.prototype.makeYear = function(year) {
   this.years[year] = new Year(year);
+};
+
+Calendar.prototype.makeToday = function() {
+  var today = new Date();
+
+  this.today = {
+    year: today.getFullYear(), 
+    month: today.getMonth(), 
+    date: today.getDate()
+  };
 };
