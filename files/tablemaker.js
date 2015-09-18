@@ -57,8 +57,15 @@ var tableMaker = {
   makeTd: function(content, id) {
   // Returns td element.
     var td = this.makeElement("td", id);
-    td.textContent = content;
+    var date = this.makeDateDiv();
+    td.appendChild(date);
     return td;
+  },
+  makeDateDiv: function() {
+    var date = this.makeElement("div", "");
+    date.textContent = "test";
+    date.classList.add("date");
+    return date;
   },
   makeTdWithCheckbox: function(value, id) {
   // Returns td element with a checkbox as child node
