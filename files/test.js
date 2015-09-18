@@ -9,7 +9,6 @@ function tester() {
   console.assert(assertion, nextDay);
 
   var month = new Month(2015, 8);
-  month.makeDays();
   console.assert(month.days.length === 30 && month.days[0].day == 2);
 }
 

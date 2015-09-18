@@ -3,6 +3,7 @@ function Month(year, month) {
   this.year = instance.getFullYear();
   this.month = instance.getMonth();
   this.days = [];
+  this.makeDays();
 }
 
 Month.prototype.makeDays = function() {
