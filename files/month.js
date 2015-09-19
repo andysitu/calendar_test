@@ -24,12 +24,12 @@ Month.prototype.getMonth = function() {
 };
 
 Month.prototype.getMonthList = function() {
-  var monthsList = [],
+  var monthList = [],
     length = this.getLength();
   run(function(i){
-    monthsList[i] = this.getDay(i);
+    monthList[i] = this.getDay(i +1);
   }, length, 0, 1, this);
-  return monthsList;
+  return monthList;
 };
 
 Month.prototype.getDay = function(date) {
