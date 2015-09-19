@@ -46,3 +46,6 @@ Calendar.prototype.getMonth = function(year, month) {
   }
   return this.years[year][month];  
 };
+Calendar.prototype.getMonthLength = function(year, month) {
+  return this.getMonth(year, month).getLength();
+};
