@@ -35,6 +35,21 @@ Calendar.prototype.getMonthList = function(year, month) {
   return (this.getMonth(year, month)).getMonth()
 };
 
+Calendar.prototype.getDay = function(year, month, date) {
+  var length;
+  if (date <= 0) {
+    length = this.getMonthLength(year, --month);
+    date = length - date;
+  } else if (date > 28) {
+    length = this.getMonthLength(year, month);
+    if (date > length) {
+      date = date - length;
+      month++;
+    }
+  }
+  return this.getMonth(year, month).getDay(date);
+}
+
 Calendar.prototype.getMonth = function(year, month) {
   if (month < 0) {
     return this.getMonth(year - 1, 12 - month);
