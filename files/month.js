@@ -32,3 +32,7 @@ Month.prototype.getDay = function(date) {
   }
   return this.days[date].getContent();
 };
+
+Month.prototype.getLength = function() {
+  return getLength(this.days);
+}
