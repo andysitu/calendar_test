@@ -32,7 +32,8 @@ Calendar.prototype.makeToday = function() {
 };
 
 Calendar.prototype.getMonthList = function(year, month) {
-  return (this.getMonth(year, month)).getMonth()
+// Returns array of objects of days containing values
+// getsMonth gets the mon instance.
   return (this.getMonth(year, month)).getMonthList()
 };
 
@@ -54,6 +55,9 @@ Calendar.prototype.getDay = function(year, month, date) {
 }
 
 Calendar.prototype.getMonth = function(year, month) {
+// Returns month instances. Uses makeYear because by
+// adjusting for month, it might get a year that doesn't
+// exist yet.
   if (month < 0) {
     return this.getMonth(year - 1, 12 - month);
   } else if (month > 11) {
@@ -65,5 +69,6 @@ Calendar.prototype.getMonth = function(year, month) {
   return this.years[year][month];  
 };
 Calendar.prototype.getMonthLength = function(year, month) {
+// Gets the length of the months list in a month instance.
   return this.getMonth(year, month).getLength();
 };
