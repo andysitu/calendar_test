@@ -26,7 +26,7 @@ Month.prototype.getMonth = function() {
 Month.prototype.getDay = function(date) {
   var monthLength = getLength(this.days);
   if (date <= 0) {
-    date = monthLength - date;
+    date = monthLength - date - 1;
   } else if (date > monthLength) {
     date = date - monthLength;
   }
