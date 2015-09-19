@@ -8,7 +8,7 @@ function Day(year, month, date, content) {
   this.date = this.instance.getDate();
   this.month = this.instance.getMonth();
   this.year = this.instance.getFullYear();
-  this.day = this.instance.getDay();
+  this.daysOfWeek = this.instance.getDay();
   this.content = (content || "");
 }
 
