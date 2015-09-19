@@ -32,6 +32,11 @@ Calendar.prototype.makeToday = function() {
 };
 
 Calendar.prototype.getMonth = function(year, month) {
+  if (month < 0) {
+    return this.getMonth(year - 1, 12 - month);
+  } else if (month > 11) {
+    return this.getMonth(year + 1, 12 - month);
+  }
   if (!(year in this.years)) {
     this.makeYear(year);
   }
