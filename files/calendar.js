@@ -40,11 +40,13 @@ Calendar.prototype.getDay = function(year, month, date) {
   if (date <= 0) {
     length = this.getMonthLength(year, --month);
     date = length - date;
+    return this.getDay(year, month, date);
   } else if (date > 28) {
     length = this.getMonthLength(year, month);
     if (date > length) {
       date = date - length;
       month++;
+      return this.getDay(year, month, date);
     }
   }
   return this.getMonth(year, month).getDay(date);
