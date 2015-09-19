@@ -24,8 +24,11 @@ Month.prototype.getMonth = function() {
 };
 
 Month.prototype.getDay = function(date) {
-  if (date < 0) {
-    date = this.days.length - date;
+  var monthLength = getLength(this.days);
+  if (date <= 0) {
+    date = monthLength - date;
+  } else if (date > monthLength) {
+    date = date - monthLength;
   }
   return this.days[date].getContent();
 };
