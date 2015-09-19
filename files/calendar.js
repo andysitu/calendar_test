@@ -33,6 +33,7 @@ Calendar.prototype.makeToday = function() {
 
 Calendar.prototype.getMonthList = function(year, month) {
   return (this.getMonth(year, month)).getMonth()
+  return (this.getMonth(year, month)).getMonthList()
 };
 
 Calendar.prototype.getDay = function(year, month, date) {
