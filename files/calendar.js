@@ -31,6 +31,10 @@ Calendar.prototype.makeToday = function() {
   };
 };
 
+Calendar.prototype.getMonthList = function(year, month) {
+  return (this.getMonth(year, month)).getMonth()
+};
+
 Calendar.prototype.getMonth = function(year, month) {
   if (month < 0) {
     return this.getMonth(year - 1, 12 - month);
@@ -40,5 +44,5 @@ Calendar.prototype.getMonth = function(year, month) {
   if (!(year in this.years)) {
     this.makeYear(year);
   }
-  return this.years[year][month].getMonth();  
+  return this.years[year][month];  
 };

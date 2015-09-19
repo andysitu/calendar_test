@@ -12,7 +12,7 @@ function tester() {
   console.assert(month.days.length === 30 && month.days[0].dayOfWeek == 2);
 
   var calendar = new Calendar();
-  var month = calendar.getMonth(2015, 8)
+  var month = calendar.getMonthList(2015, 8)
   console.assert(month.length === 30)
 ;}
 
