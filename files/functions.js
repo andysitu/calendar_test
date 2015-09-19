@@ -27,7 +27,7 @@ function map(obj, callback, context) {
   } else if (Object.prototype.toString.call(obj) == '[object Array]') {
     return obj.map(callback, context);
   } else { throw "map was given a non-object"; }
-  }
+}
 
 function copy(obj) {
 // Returns n object/ array copy.
@@ -51,4 +51,12 @@ function run(callback, end, start, increment, context) {
       callback.call(context, i);
     }
   } else { throw "Error with run"; }
+}
+
+function getLength(obj) {
+  if (Object.prototype.toString.call(obj) == '[object Object]') {
+    return Object.keys(obj).length
+  } else if (Object.prototype.toString.call(obj) == '[object Array]') {
+    return obj.length;
+  } else { throw "getLength was given a non-object"; }
 }
