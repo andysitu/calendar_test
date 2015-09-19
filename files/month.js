@@ -23,6 +23,15 @@ Month.prototype.getMonth = function() {
   }, this);
 };
 
+Month.prototype.getMonthList = function() {
+  var monthsList = [],
+    length = this.getLength();
+  run(function(i){
+    monthsList[i] = this.getDay(i);
+  }, length, 0, 1, this);
+  return monthsList;
+};
+
 Month.prototype.getDay = function(date) {
   var monthLength = getLength(this.days);
   if (date <= 0) {
