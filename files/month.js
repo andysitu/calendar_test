@@ -18,7 +18,14 @@ Month.prototype.makeDays = function() {
 };
 
 Month.prototype.getMonth = function() {
-  return this.days.map(function(day) {
-    return day.getContent();
-  });
+  return this.days.map(function(_, date) {
+    return this.getDay(date);
+  }, this);
+};
+
+Month.prototype.getDay = function(date) {
+  if (date < 0) {
+    date = this.days.length - date;
+  }
+  return this.days[date].getContent();
 };
