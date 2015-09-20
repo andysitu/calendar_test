@@ -1,6 +1,6 @@
 function loadIt() {
   cpu.run();
-
+  ui.run();
   tester();
 }
 
