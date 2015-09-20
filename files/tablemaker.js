@@ -14,10 +14,19 @@ var tableMaker = {
 
     table.appendChild(this.makeTrWithHeaders(headerList));
 
-    run(function() {
-      var tr = tableMaker.makeRow(headerList);
+    var rows = daysList.length / 7;
+    daysList.forEach(function(week) {
+      var tr = eleFunctions.makeElement("tr");
+
+      week.forEach(function(dayObj){
+        var td = eleFunctions.makeElement("td");
+        var dateDiv = this.makeDateDiv(dayObj.date);
+        td.appendChild(dateDiv);
+        tr.appendChild(td);
+      }, this);
+
       table.appendChild(tr);
-    }, 5);
+    }, this);
       
     //addHandler(table, "click", tableSelect.toggleSelected.bind(tableSelect));
 
