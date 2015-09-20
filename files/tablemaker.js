@@ -1,7 +1,7 @@
 var tableMaker = {
   headerList: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday",
     "Friday", "Saturday"],
-  createTable: function() {
+  createTable: function(daysList) {
   /* Returns a document fragment which display will apend.
    */
     var docFrag = document.createDocumentFragment(),
