@@ -1,8 +1,14 @@
 var cpu = {
-  currentMonth: 0,
+  year: 0,
+  month: 0,
+  calendar: null,
   run: function() {
-    calendar = new Calendar();
-    var month = calendar.makeCalendarArray(2015, 8)
+    this.calendar = new Calendar();
+    var today = this.calendar.getToday();
+    this.year = today.year;
+    this.month = today.month;
+
+    var month = this.calendar.makeCalendarArray(this.year, this.month)
     var table = tableMaker.createTable(month);
     eleFunctions.append("tableDiv", table);
   }
