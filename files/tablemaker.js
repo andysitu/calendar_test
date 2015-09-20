@@ -5,7 +5,7 @@ var tableMaker = {
   /* Returns a document fragment which display will apend.
    */
     var docFrag = document.createDocumentFragment(),
-      tableId = "calendar";
+      tableId = "calendarTable";
 
     var table = eleFunctions.makeElement("table", tableId);
     docFrag.appendChild(table);
