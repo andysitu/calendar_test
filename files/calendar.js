@@ -85,6 +85,13 @@ Calendar.prototype.makeCalendarArray = function(year, month) {
   return daysList;
 };
 
+Calendar.prototype.getDays = function(year, month, datesArray) {
+  datesArray = datesArray.map(function(date) {
+    return this.getDay(year, month, date);
+  }, this);
+  return datesArray;
+}
+
 Calendar.prototype.getMonthLength = function(year, month) {
 // Gets the length of the months list in a month instance.
   return this.getMonth(year, month).getLength();
