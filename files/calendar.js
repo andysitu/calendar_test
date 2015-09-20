@@ -1,7 +1,6 @@
-function Calendar() {
+function Calendar(year) {
   this._years = {}; // object containing year instances
-  this._today = null; // object containing today's year, month, and date values.
-  this.init();
+  this.init(year);
 }
 
 
@@ -12,9 +11,8 @@ Calendar.prototype.getToday = function() {
 
 
 
-Calendar.prototype.init = function() {
-  this.makeToday();
-  this.makeYear(this._today.year);
+Calendar.prototype.init = function(year) {
+  this.makeYear(year);
 };
 
 Calendar.prototype.makeYear = function(year) {
@@ -28,16 +26,6 @@ Calendar.prototype.makeYear = function(year) {
 Calendar.prototype.makeMonth = function(year, month) {
   return new Month(year, month );
 }
-
-Calendar.prototype.makeToday = function() {
-  var today = new Date();
-
-  this._today = {
-    year: today.getFullYear(), 
-    month: today.getMonth(), 
-    date: today.getDate()
-  };
-};
 
 Calendar.prototype.getMonthList = function(year, month) {
 // Returns array of objects of days containing values
