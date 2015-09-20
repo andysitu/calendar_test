@@ -1,12 +1,13 @@
 var eleFunctions = {
-  addHandler: function(type, event, handler) {
+  addHandler: function(element, event, handler, status) {
   // Adds an event handler to document by type either
   //  being the id or the element.
-    if (typeof type == 'string') { // element Id
-      var element = document.getElementById(type);
-      element.addEventListener(event, handler);
-    } else if (typeof type == 'object') { // element node
-      type.addEventListener(event, handler);
+    if (status === undefined) { status = false; }
+    if (typeof element == 'string') { // element Id
+      element = document.getElementById(element);
+    } 
+    if (typeof element === 'object') { // element node
+      element.addEventListener(event, handler, status);
     }
   },
 
