@@ -15,16 +15,8 @@ var tableMaker = {
     table.appendChild(this.makeTrWithHeaders(headerList));
 
     var rows = daysList.length / 7;
-    daysList.forEach(function(week) {
-      var tr = eleFunctions.makeElement("tr");
-
-      week.forEach(function(dayObj){
-        var td = eleFunctions.makeElement("td");
-        var dateDiv = this.makeDateDiv(dayObj.date);
-        td.appendChild(dateDiv);
-        tr.appendChild(td);
-      }, this);
-
+    daysList.forEach(function(weekArray) {
+      var tr = this.makeRow(weekArray);
       table.appendChild(tr);
     }, this);
       
@@ -33,13 +25,15 @@ var tableMaker = {
     return docFrag;
   },
 
-  makeRow: function(headerList) {
-  // Returns tr element and makes it in the order of 
-  //  the headerlist. Also, creates the td elements 
-  //  and appends it. Tr with headers is made in makeTable.
+  makeRow: function(weekArray) {
+  // Returns tr element for an entire week.
+  // Input: weekArray is an array with date Objects 
+  // created by calendar instances.
     var tr = eleFunctions.makeElement("tr");
-    each(headerList, function(header, i, headerList) {
-      var td = this.makeTd();
+    weekArray.forEach(function(dayObj){
+      var td = eleFunctions.makeElement("td");
+      var dateDiv = this.makeDateDiv(dayObj.date);
+      td.appendChild(dateDiv);
       tr.appendChild(td);
     }, this);
     return tr;
