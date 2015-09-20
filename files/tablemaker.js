@@ -51,11 +51,11 @@ var tableMaker = {
     td.appendChild(date);
     return td;
   },
-  makeDateDiv: function() {
-    var date = this.makeElement("div", "");
-    date.textContent = "test";
-    date.classList.add("date");
-    return date;
+  makeDateDiv: function(date) {
+    var dateDiv = this.makeElement("div", "");
+    dateDiv.textContent = date;
+    dateDiv.classList.add("date");
+    return dateDiv;
   },
   makeTh: function(content, id) {
   // Returns an th element.
