@@ -72,16 +72,20 @@ Calendar.prototype.getMonth = function(year, month) {
 Calendar.prototype.makeCalendarArray = function(year, month) {
   var daysList = this.getMonthList(year, month);
   daysList = this.addPrevMonthDays(year, month, daysList);
-  var amount = 7 - daysList.length % 7;
-  var arr = this.getNextMonthDays(year, month, amount);
-  daysList = daysList.concat(arr);
+  daysList = this.addNextMonthDays(year, month, daysList);
   return daysList;
+};
+
+Calendar.prototype.addNextMonthDays = function(year, month, daysList) {
+  var lastDayOfWeek = 7 - daysList.length % 7;
+  var nextMonthDays = this.getNextMonthDays(year, month, lastDayOfWeek);
+  return daysList.concat(nextMonthDays);
 };
 
 Calendar.prototype.getNextMonthDays = function(year, month, lastDayOfWeek) {
   var nextMonthDates = range (1, lastDayOfWeek + 1);
   return this.getDays(year, month + 1, nextMonthDates);
-}
+};
 
 Calendar.prototype.addPrevMonthDays = function(year, month, daysList) {
   var firstDayOfWeek = daysList[0].dayOfWeek;
