@@ -4,6 +4,14 @@ function Calendar() {
   this.init();
 }
 
+
+
+Calendar.prototype.getToday = function() {
+  return copy(this._today);
+};
+
+
+
 Calendar.prototype.init = function() {
   this.makeToday();
   this.makeYear(this._today.year);
