@@ -49,22 +49,21 @@ var tableMaker = {
   },
   makeTd: function(content, id) {
   // Returns td element.
-    var td = this.makeElement("td", id);
+    var td = eleFunctions.makeElement("td", id);
     var date = this.makeDateDiv();
     td.appendChild(date);
     return td;
   },
   makeDateDiv: function(date) {
-    var dateDiv = this.makeElement("div", "");
+    var dateDiv = eleFunctions.makeElement("div", "");
     dateDiv.textContent = date;
     dateDiv.classList.add("date");
     return dateDiv;
   },
   makeTh: function(content, id) {
   // Returns an th element.
-    var th = this.makeElement("th", id);
+    var th = eleFunctions.makeElement("th", id);
     th.textContent = content;
     return th;
-  },
-  makeElement: eleFunctions.makeElement, 
+  }
 }
