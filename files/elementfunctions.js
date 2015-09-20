@@ -1,4 +1,4 @@
-var elementFunctions = {
+var eleFunctions = {
   addHandler: function(type, event, handler) {
   // Adds an event handler to document by type either
   //  being the id or the element.

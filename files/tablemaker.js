@@ -73,5 +73,5 @@ var tableMaker = {
     th.textContent = content;
     return th;
   },
-  makeElement: elementFunctions.makeElement, 
+  makeElement: eleFunctions.makeElement, 
 }
