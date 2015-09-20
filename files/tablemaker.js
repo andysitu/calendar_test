@@ -28,21 +28,16 @@ var tableMaker = {
   // Returns tr element and makes it in the order of 
   //  the headerlist. Also, creates the td elements 
   //  and appends it. Tr with headers is made in makeTable.
-    var tr = this.makeTr();
+    var tr = eleFunctions.makeElement("tr");
     each(headerList, function(header, i, headerList) {
       var td = this.makeTd();
       tr.appendChild(td);
     }, this);
     return tr;
   },
-  makeTr: function(id) {
-  // Returns tr element.
-    var tr = this.makeElement("tr", id);
-    return tr;
-  },
   makeTrWithHeaders: function(headerList) {
   // Used in makeTable function.
-    var tr = this.makeTr("Header");
+    var tr = eleFunctions.makeElement("tr", "Header");
     each(headerList, function(head, i, list) {
       var th = this.makeTh(head);
       tr.appendChild(th);
