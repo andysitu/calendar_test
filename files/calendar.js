@@ -85,6 +85,13 @@ Calendar.prototype.makeCalendarArray = function(year, month) {
   return daysList;
 };
 
+Calendar.prototype.getPrevMonthDays = function(year, month, firstDayOfWeek) {
+// firstDayOfWeek refers to the current month. Want to get the days before that
+// date to complete the entire week.
+  var negativeDayValues = range(firstDayOfWeek - 1, -1, -1).map(function(value){ return -value; });
+  return this.getDays(year, month, negativeDayValues);
+};
+
 Calendar.prototype.getDays = function(year, month, datesArray) {
   datesArray = datesArray.map(function(date) {
     return this.getDay(year, month, date);
