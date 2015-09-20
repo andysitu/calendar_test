@@ -1,6 +1,7 @@
+var calendar;
+
 function loadIt() {
-  var table = tableMaker.createTable();
-  elementFunctions.append("tableDiv", table);
+  cpu.run();
 
   tester();
 }
