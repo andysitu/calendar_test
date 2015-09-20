@@ -60,3 +60,12 @@ function getLength(obj) {
     return obj.length;
   } else { throw "getLength was given a non-object"; }
 }
+
+function range(start, end) {
+// Range function in python. Returns array of
+// the range from start to end - 1.
+  var array = [];
+  for (var i = start; i < end; i++)
+    array.push(i);
+  return array;
+}
