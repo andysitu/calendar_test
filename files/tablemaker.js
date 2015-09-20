@@ -7,7 +7,7 @@ var tableMaker = {
     var docFrag = document.createDocumentFragment(),
       tableId = "calendar";
 
-    var table = this.makeTable(tableId);
+    var table = eleFunctions.makeElement("table", tableId);
     docFrag.appendChild(table);
 
     var headerList = this.headerList;
@@ -24,11 +24,6 @@ var tableMaker = {
     return docFrag;
   },
 
-  makeTable: function(id) {
-  // Makes the table element and returns it.
-    var table = this.makeElement("table", id);
-    return table;
-  },
   makeRow: function(headerList) {
   // Returns tr element and makes it in the order of 
   //  the headerlist. Also, creates the td elements 
