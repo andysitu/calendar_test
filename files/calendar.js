@@ -74,7 +74,7 @@ Calendar.prototype.makeCalendarArray = function(year, month) {
   var array = [];
   run(function(i){
     array.unshift(this.getDay(year, month, -i));
-  }, daysList[1].dayOfWeek, 0, 1, this);
+  }, daysList[0].dayOfWeek, 0, 1, this);
   daysList = array.concat(daysList);
   var amount = 7 - daysList.length % 7;
   array = [];
