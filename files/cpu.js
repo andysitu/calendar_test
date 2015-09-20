@@ -10,6 +10,6 @@ var cpu = {
 
     var month = this.calendar.makeCalendarArray(this.year, this.month)
     var table = tableMaker.createTable(month);
-    eleFunctions.append("tableDiv", table);
+    display.displayMonth(table);
   }
 };
