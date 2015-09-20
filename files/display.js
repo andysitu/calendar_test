@@ -1,5 +1,6 @@
 var display = {
-  displayMonth(docFrag) {
-    eleFunctions.append("calendarDiv", docFrag);
+  displayMonth(tableFrag) {
+    var tableDiv = document.getElementById("tableDiv");
+    tableDiv.appendChild(tableFrag);
   }
 };
