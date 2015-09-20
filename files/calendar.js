@@ -71,11 +71,9 @@ Calendar.prototype.getMonth = function(year, month) {
 
 Calendar.prototype.makeCalendarArray = function(year, month) {
   var daysList = this.getMonthList(year, month);
-  var array = [];
-  run(function(i){
-    array.unshift(this.getDay(year, month, -i));
-  }, daysList[0].dayOfWeek, 0, 1, this);
-  daysList = array.concat(daysList);
+  var firstDayOfWeek = daysList[0].dayOfWeek;
+  var prevMonthDays = this.getPrevMonthDays(year, month, firstDayOfWeek);
+  daysList = prevMonthDays.concat(daysList);
   var amount = 7 - daysList.length % 7;
   array = [];
   run(function(i) {
@@ -97,7 +95,7 @@ Calendar.prototype.getDays = function(year, month, datesArray) {
     return this.getDay(year, month, date);
   }, this);
   return datesArray;
-}
+};
 
 Calendar.prototype.getMonthLength = function(year, month) {
 // Gets the length of the months list in a month instance.
