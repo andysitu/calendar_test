@@ -44,4 +44,4 @@ Month.prototype.getDay = function(date) {
 
 Month.prototype.getLength = function() {
   return getLength(this.days);
-}
+};

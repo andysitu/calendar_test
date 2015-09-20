@@ -32,4 +32,4 @@ var eleFunctions = {
 
     parent.appendChild(child);
   }
-}
+};

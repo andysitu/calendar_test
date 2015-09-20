@@ -1,5 +1,3 @@
-var calendar;
-
 function loadIt() {
   cpu.run();
 

@@ -28,4 +28,4 @@ Day.prototype.getContent = function() {
     day[prop] = this[prop];
   }, this);
   return day;
-}
+};

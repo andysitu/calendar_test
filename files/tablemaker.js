@@ -66,4 +66,4 @@ var tableMaker = {
     th.textContent = content;
     return th;
   }
-}
+};
