@@ -5,11 +5,21 @@ var cpu = {
   run: function() {
     this.calendar = new Calendar();
     var today = this.calendar.getToday();
-    this.year = today.year;
-    this.month = today.month;
+    this.setToday();
 
-    var month = this.calendar.makeCalendarArray(this.year, this.month)
-    var table = tableMaker.createTable(month);
+    this.makeTable();    
+  },
+
+  makeTable() {
+    var tableFragment = this.calendar.makeCalendarArray(this.year, this.month)
+    var table = tableMaker.createTable(tableFragment);
     display.displayMonth(table);
+  },
+  setToday() {
+    var today = new Date();
+
+    this.year = today.getFullYear();
+    this.month = today.getMonth();
+    this.date = today.getDate();
   }
 };
