@@ -3,9 +3,8 @@ var cpu = {
   month: 0,
   calendar: null,
   run: function() {
-    this.calendar = new Calendar();
-    var today = this.calendar.getToday();
     this.setToday();
+    this.calendar = new Calendar(this.year);
 
     this.makeTable();    
   },
