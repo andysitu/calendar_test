@@ -1,6 +1,7 @@
 var cpu = {
   year: 0,
   month: 0,
+  date: 0,
   calendar: null,
   run: function() {
     this.setToday();
@@ -8,7 +9,16 @@ var cpu = {
 
     this.makeTable();    
   },
-
+  changeMonth(year, month) {
+    if (month > 11) {
+      this.changeMonth(year + 1, month - 12);
+    } else if (month < 0) {
+      this.changeMonth(year - 1, 12 + month);
+    } else {
+      this.month = month;
+      this.year = year;
+    }
+  },
   makeTable() {
     var tableFragment = this.calendar.makeCalendarArray(this.year, this.month);
     var table = tableMaker.createTable(tableFragment);
