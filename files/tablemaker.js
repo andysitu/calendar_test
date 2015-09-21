@@ -20,8 +20,6 @@ var tableMaker = {
       table.appendChild(tr);
     }, this);
       
-    //addHandler(table, "click", tableSelect.toggleSelected.bind(tableSelect));
-
     return docFrag;
   },
 
