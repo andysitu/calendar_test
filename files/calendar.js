@@ -55,9 +55,9 @@ Calendar.prototype.getMonth = function(year, month) {
 // adjusting for month, it might get a year that doesn't
 // exist yet.
   if (month < 0) {
-    return this.getMonth(year - 1, 12 - month);
+    return this.getMonth(year - 1, 12 + month);
   } else if (month > 11) {
-    return this.getMonth(year + 1, 12 - month);
+    return this.getMonth(year + 1, month - 12);
   }
   if (!(year in this._years)) {
     this.makeYear(year);
