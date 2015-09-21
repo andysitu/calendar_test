@@ -12,8 +12,8 @@ var cpu = {
   makeTable() {
     var tableFragment = this.calendar.makeCalendarArray(this.year, this.month);
     var table = tableMaker.createTable(tableFragment);
-    display.displayMonth(table, ui.tableClick);
-    eleFunctions.addHandler("calendarTable", "click", ui.tableClick);
+    display.displayMonth(table, ui.removeTableHandler);
+    ui.addTableHandler();
   },
   setToday() {
     var today = new Date();

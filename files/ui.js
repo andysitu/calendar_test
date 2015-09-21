@@ -3,7 +3,6 @@ var ui = {
     eleFunctions.addHandler("nextMonth", "click", this.nextMonth);
     eleFunctions.addHandler("prevMonth", "click", this.prevMonth);
   },
-
   nextMonth: function(e) {
     console.log("You clicked on next");
   },
@@ -12,5 +11,11 @@ var ui = {
   },
   tableClick: function(e) {
     console.log("You clicked on the calendar", e.target);
+  },
+  removeTableHandler(tableElement) {
+    tableElement.removeEventListener("click", handlerFunctionToRemove);
+  },
+  addTableHandler() {
+    eleFunctions.addHandler("calendarTable", "click", ui.tableClick);
   }
 };
