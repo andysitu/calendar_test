@@ -4,13 +4,13 @@ var ui = {
     eleFunctions.addHandler("prevMonth", "click", this.prevMonth);
   },
   nextMonth: function(e) {
-    console.log("You clicked on next");
+    cpu.processInput("nextMonth");
   },
   prevMonth: function(e) {
-    console.log("You clicked on previous");
+    cpu.processInput("prevMonth");
   },
   tableClick: function(e) {
-    console.log("You clicked on the calendar", e.target);
+    cpu.processInput("clickedTable", e.target);
   },
   removeTableHandler(tableElement) {
     tableElement.removeEventListener("click", handlerFunctionToRemove);

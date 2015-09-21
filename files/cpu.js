@@ -21,5 +21,15 @@ var cpu = {
     this.year = today.getFullYear();
     this.month = today.getMonth();
     this.date = today.getDate();
+  },
+  processInput(inputType, status) {
+    switch(inputType) {
+      case "nextMonth":
+        console.log("You clicked on next"); break;
+      case "prevMonth":
+        console.log("You clicked on previous"); break;
+      case "clickedTable":
+        console.log("You clicked on the calendar", status); break;
+    }
   }
 };
