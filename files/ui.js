@@ -12,8 +12,9 @@ var ui = {
   },
   tableClick: function(e) {
     var id = e.target.id;
-    if (/\d{1,2}_\d{1,2}/.test(id)) {
-      cpu.processInput("clickedTable", id);
+    var idMatch = id.match(/(\d{1,2})_(\d{1,2})/);
+    if (idMatch) {
+      cpu.processInput("clickedTable", {month: idMatch[1], date: idMatch[2]});
     }
   },
   today: function(e) {
