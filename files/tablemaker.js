@@ -5,7 +5,8 @@ var tableMaker = {
   /* Returns a document fragment which display will apend.
    */
     var docFrag = document.createDocumentFragment(),
-      tableId = "calendarTable";
+      tableId = "calendarTable",
+      createId = function(month, date) { return "td" + month + "_" + date;};
 
     var table = eleFunctions.makeElement("table", tableId);
     docFrag.appendChild(table);
@@ -16,20 +17,20 @@ var tableMaker = {
 
     var rows = daysList.length / 7;
     daysList.forEach(function(weekArray) {
-      var tr = this.makeRow(weekArray);
+      var tr = this.makeRow(weekArray, createId);
       table.appendChild(tr);
     }, this);
       
     return docFrag;
   },
 
-  makeRow: function(weekArray) {
+  makeRow: function(weekArray, makeId) {
   // Returns tr element for an entire week.
   // Input: weekArray is an array with date Objects 
   // created by calendar instances.
     var tr = eleFunctions.makeElement("tr");
     weekArray.forEach(function(dayObj){
-      var id = dayObj.month + "_" + dayObj.date;
+      var id = makeId(dayObj.month, dayObj.date);
       var td = eleFunctions.makeElement("td", id);
       var dateDiv = this.makeDateDiv(dayObj.date);
       td.appendChild(dateDiv);

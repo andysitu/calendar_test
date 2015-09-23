@@ -12,7 +12,7 @@ var ui = {
   },
   tableClick: function(e) {
     var id = e.target.id;
-    var idMatch = id.match(/(\d{1,2})_(\d{1,2})/);
+    var idMatch = id.match(/td(\d{1,2})_(\d{1,2})/);
     if (idMatch) {
       cpu.processInput("clickedTable", {month: idMatch[1], date: idMatch[2]});
     }
