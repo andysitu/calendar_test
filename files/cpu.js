@@ -3,6 +3,7 @@ var cpu = {
   month: 0,
   date: 0,
   calendar: null,
+  selected: {}, // prop: month, with dates stored in array
   run: function() {
     this.setToday();
     this.calendar = new Calendar(this.year);
@@ -60,8 +61,22 @@ var cpu = {
   },
   select(dateObj) {
   // Input: Obj with prop: month & date
-  var month = dateObj.month,
-    date = dateObj.date;
-  display.selected(month, date);
+    var month = dateObj.month,
+      date = dateObj.date,
+      selected = this.selected,
+      status;
+
+    if (!Array.isArray(selected[month])) {
+      selected[month] = []; }
+
+    var index = selected[month].indexOf(date);
+    if (index < 0) {
+      selected[month].push(date);
+      status = true;
+    } else {
+      selected[month].splice(index, 1);
+      status = false;
+    }
+    display.selected(month, date, status);
   }
 };
