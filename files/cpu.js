@@ -63,19 +63,17 @@ var cpu = {
   // Input: Obj with prop: month & date
     var month = dateObj.month,
       date = dateObj.date,
-      status;
       selected = this.selected;
 
     if (!Array.isArray(selected[month])) {
       selected[month] = []; }
 
-    var index = selected[month].indexOf(date);
+    var index = selected[month].indexOf(date),
+      status = index < 0;
     if (index < 0) {
       selected[month].push(date);
-      status = true;
     } else {
       selected[month].splice(index, 1);
-      status = false;
     }
     display.select(month, date, status);
   }
