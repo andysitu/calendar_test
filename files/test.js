@@ -13,7 +13,9 @@ function tester() {
 
   var calendar = new Calendar();
   var month = calendar.getMonthList(2015, 8);
-  console.assert(getLength(month) === 30)
+  console.assert(getLength(month) === 30);
+  month = calendar.getMonthList(2015, 12);
+  onsole.assert(getLength(month) === 31);
   var dayObj = calendar.getDay(2015, 8, 62);
   console.assert(dayObj.date == 1 && dayObj.month == 10);
 }
