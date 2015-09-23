@@ -55,7 +55,14 @@ var cpu = {
         console.log(this.month, this.year);
         break;
       case "clickedTable":
-        console.log("You clicked on the calendar", status); break;
+        this.select(status); break;
     }
+  },
+  select(dateObj) {
+  // Input: Obj with prop: month & date
+  var month = dateObj.month,
+    date = dateObj.date;
+  console.log(month, date);
+  display.select(month, date);
   }
 };
