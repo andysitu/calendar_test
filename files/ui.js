@@ -11,7 +11,10 @@ var ui = {
     cpu.processInput("prevMonth");
   },
   tableClick: function(e) {
-    cpu.processInput("clickedTable", e.target);
+    var id = e.target.id;
+    if (/\d{1,2}_\d{1,2}/.test(id)) {
+      cpu.processInput("clickedTable", id);
+    }
   },
   today: function(e) {
     cpu.processInput("today");
