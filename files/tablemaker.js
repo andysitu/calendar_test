@@ -29,7 +29,8 @@ var tableMaker = {
   // created by calendar instances.
     var tr = eleFunctions.makeElement("tr");
     weekArray.forEach(function(dayObj){
-      var td = eleFunctions.makeElement("td");
+      var id = dayObj.month + "_" + dayObj.date;
+      var td = eleFunctions.makeElement("td", id);
       var dateDiv = this.makeDateDiv(dayObj.date);
       td.appendChild(dateDiv);
       tr.appendChild(td);
