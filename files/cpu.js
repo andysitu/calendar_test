@@ -19,6 +19,11 @@ var cpu = {
       this.year = year;
     }
   },
+  increaseMonth(value) {
+  // Works the same for negative or positive value.
+    var month = this.month + value;
+    this.changeMonth(this.year, month);
+  },
   makeTable() {
     var tableFragment = this.calendar.makeCalendarArray(this.year, this.month);
     var table = tableMaker.createTable(tableFragment);
