@@ -13,10 +13,9 @@ var eleFunctions = {
 
   makeElement: function(type, id) {
   // Returns an element and appends an id.
-    if (id === undefined)
-      id = "";
     var element = document.createElement(type);
-    element.id = id;
+    if (typeof id === "string")
+      element.id = id;
     return element;
   },
 
