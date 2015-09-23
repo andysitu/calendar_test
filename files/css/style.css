@@ -13,6 +13,8 @@ td, th {
   white-space: pre-wrap;
 }
 
+td:hover { background: #b19cd9; }
+
 td {
   vertical-align:top;
   background-color: pink;

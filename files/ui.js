@@ -17,9 +17,12 @@ var ui = {
     cpu.processInput("today");
   },
   removeTableHandler(tableElement) {
+  // called by cpu.makeTable as higher order function into display 
+  // (where it's actually used).
     tableElement.removeEventListener("click", ui.tableClick);
   },
   addTableHandler() {
+  // appended to table in cpu.makeTable.
     eleFunctions.addHandler("calendarTable", "click", ui.tableClick);
   }
 };
