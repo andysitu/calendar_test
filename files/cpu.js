@@ -49,6 +49,11 @@ var cpu = {
         console.log(this.month, this.year);
         this.makeTable();
         break;
+      case "today":
+        this.setToday();
+        this.makeTable();
+        console.log(this.month, this.year);
+        break;
       case "clickedTable":
         console.log("You clicked on the calendar", status); break;
     }
