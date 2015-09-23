@@ -12,8 +12,12 @@ var display = {
     }
   },
 
-  selected(month, date) {
+  selected(month, date, status) {
     var selectedTd = document.querySelector("#td" + month + "_" + date);
-    selectedTd.classList.add("selected");
+    if (status === true) {
+      selectedTd.classList.add("selected");
+    } else {
+      selectedTd.classList.remove("selected");
+    }
   }
 };
