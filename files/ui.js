@@ -13,7 +13,7 @@ var ui = {
     cpu.processInput("clickedTable", e.target);
   },
   removeTableHandler(tableElement) {
-    tableElement.removeEventListener("click", handlerFunctionToRemove);
+    tableElement.removeEventListener("click", ui.tableClick);
   },
   addTableHandler() {
     eleFunctions.addHandler("calendarTable", "click", ui.tableClick);
