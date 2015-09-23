@@ -13,13 +13,17 @@ td, th {
   white-space: pre-wrap;
 }
 
-td:hover { background: #b19cd9; }
+td:hover { background-color: #b19cd9; }
 
 td {
   vertical-align:top;
   background-color: pink;
   height: 120px;
   width: 200px;
+}
+
+td.selected {
+  background-color: red;
 }
 
 th {
