@@ -12,7 +12,7 @@ var display = {
     }
   },
 
-  selected(month, date, status) {
+  select(month, date, status) {
     var selectedTd = document.querySelector("#td" + month + "_" + date);
     if (status === true) {
       selectedTd.classList.add("selected");

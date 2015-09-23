@@ -63,8 +63,8 @@ var cpu = {
   // Input: Obj with prop: month & date
     var month = dateObj.month,
       date = dateObj.date,
-      selected = this.selected,
       status;
+      selected = this.selected;
 
     if (!Array.isArray(selected[month])) {
       selected[month] = []; }
@@ -77,6 +77,6 @@ var cpu = {
       selected[month].splice(index, 1);
       status = false;
     }
-    display.selected(month, date, status);
+    display.select(month, date, status);
   }
 };
