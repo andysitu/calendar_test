@@ -1,5 +1,7 @@
 var display = {
+  table: null,
   displayMonth(tableFrag, tableHandlerRemover) {
+    this.table = tableFrag.firstChild;
     var test = document.getElementById("calendarTable");
     var tableDiv = document.getElementById("tableDiv");
     if (test === null) {
