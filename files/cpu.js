@@ -40,9 +40,15 @@ var cpu = {
   processInput(inputType, status) {
     switch(inputType) {
       case "nextMonth":
-        console.log("You clicked on next"); break;
+        this.increaseMonth(1); 
+        console.log(this.month, this.year);
+        this.makeTable();
+        break;
       case "prevMonth":
-        console.log("You clicked on previous"); break;
+        this.increaseMonth(-1); 
+        console.log(this.month, this.year);
+        this.makeTable();
+        break;
       case "clickedTable":
         console.log("You clicked on the calendar", status); break;
     }
