@@ -62,7 +62,6 @@ var cpu = {
   // Input: Obj with prop: month & date
   var month = dateObj.month,
     date = dateObj.date;
-  console.log(month, date);
-  display.select(month, date);
+  display.selected(month, date);
   }
 };
