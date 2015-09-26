@@ -30,11 +30,9 @@ var tableMaker = {
   // created by calendar instances.
   //  makeId is a callback function
     var tr = eF.makeElement("tr");
-    weekArray.forEach(function(dayObj){
+    weekArray.forEach(function(dayObj){ // Makes td for dates
       var id = makeId(dayObj.month, dayObj.date);
-      var td = eleFunctions.makeElement("td", {id: id});
-      var dateDiv = this.makeDateDiv(dayObj.date);
-      td.appendChild(dateDiv);
+      var td = eleFunctions.makeElement("td", {id: id}, this.makeDateDiv(dayObj.date));
       tr.appendChild(td);
     }, this);
     return tr;
@@ -47,10 +45,6 @@ var tableMaker = {
       tr.appendChild(th);
     }, this);
     return tr;
-  },
-  makeTd: function(content, id) {
-  // Returns td element.
-    return eF.makeElement("td", {id: id}, this.makeDateDiv());
   },
   makeDateDiv: function(date) {
     return eleFunctions.makeElement("div", {"class": "date"}, date);
