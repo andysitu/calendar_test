@@ -21,7 +21,7 @@ var eleFunctions = eF = {
     }
     for (var i = 2; i < arguments.length; i++) {
       var child = arguments[i];
-      if (typeof child === 'string')
+      if (typeof child === 'string' || typeof child === 'number')
         child = document.createTextNode(child);
       element.appendChild(child);
     }
