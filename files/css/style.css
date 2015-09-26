@@ -13,20 +13,21 @@ td, th {
   white-space: pre-wrap;
 }
 
-td:hover { background-color: #b19cd9; }
+td:hover { background-color: rgb(210, 210, 210); }
 
 td {
   vertical-align:top;
-  background-color: pink;
+  background-color: rgb(224, 224, 224);
   height: 120px;
   width: 200px;
 }
 
 td.selected {
-  background-color: red;
+  background-color: rgb(192, 192, 192);
 }
 
 th {
+  color: rgb(224, 224, 224);
   background-color: green;
   height: 20px;
 }
