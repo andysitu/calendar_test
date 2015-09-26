@@ -22,15 +22,10 @@ var display = {
   },
 
   createMenu() {
-    var height = 200,
-      width = 400;
 
     var menu = eF.makeElement("div", {
       class: "menu",
     }, "TESTING");
-
-    menu.style.height = height;
-    menu.style.width = width;
 
     document.body.appendChild(menu);
   }
