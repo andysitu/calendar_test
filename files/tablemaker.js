@@ -41,9 +41,9 @@ var tableMaker = {
   },
   makeTrWithHeaders: function(headerList) {
   // Used in makeTable function.
-    var tr = eF.makeElement("tr", {id: "Header"});
+    var tr = eF.makeElement("tr");
     each(headerList, function(head, i, list) {
-      var th = this.makeTh(head);
+      var th = eF.makeElement("th", {id: head}, head);
       tr.appendChild(th);
     }, this);
     return tr;
@@ -60,11 +60,5 @@ var tableMaker = {
     dateDiv.textContent = date;
     dateDiv.classList.add("date");
     return dateDiv;
-  },
-  makeTh: function(content, id) {
-  // Returns an th element.
-    var th = eleFunctions.makeElement("th", {id: id});
-    th.textContent = content;
-    return th;
   }
 };
