@@ -8,7 +8,7 @@ var tableMaker = {
       tableId = "calendarTable",
       createId = function(month, date) { return "td" + month + "_" + date;};
 
-    var table = eleFunctions.makeElement("table", tableId);
+    var table = eleFunctions.makeElement("table", {id: tableId});
     docFrag.appendChild(table);
 
     var headerList = this.headerList;
@@ -28,10 +28,11 @@ var tableMaker = {
   // Returns tr element for an entire week.
   // Input: weekArray is an array with date Objects 
   // created by calendar instances.
-    var tr = eleFunctions.makeElement("tr");
+  //  makeId is a callback function
+    var tr = eF.makeElement("tr");
     weekArray.forEach(function(dayObj){
       var id = makeId(dayObj.month, dayObj.date);
-      var td = eleFunctions.makeElement("td", id);
+      var td = eleFunctions.makeElement("td", {id: id});
       var dateDiv = this.makeDateDiv(dayObj.date);
       td.appendChild(dateDiv);
       tr.appendChild(td);
@@ -40,7 +41,7 @@ var tableMaker = {
   },
   makeTrWithHeaders: function(headerList) {
   // Used in makeTable function.
-    var tr = eleFunctions.makeElement("tr", "Header");
+    var tr = eF.makeElement("tr", {id: "Header"});
     each(headerList, function(head, i, list) {
       var th = this.makeTh(head);
       tr.appendChild(th);
@@ -49,20 +50,20 @@ var tableMaker = {
   },
   makeTd: function(content, id) {
   // Returns td element.
-    var td = eleFunctions.makeElement("td", id);
+    var td = eF.makeElement("td", {id: id});
     var date = this.makeDateDiv();
     td.appendChild(date);
     return td;
   },
   makeDateDiv: function(date) {
-    var dateDiv = eleFunctions.makeElement("div", "");
+    var dateDiv = eleFunctions.makeElement("div");
     dateDiv.textContent = date;
     dateDiv.classList.add("date");
     return dateDiv;
   },
   makeTh: function(content, id) {
   // Returns an th element.
-    var th = eleFunctions.makeElement("th", id);
+    var th = eleFunctions.makeElement("th", {id: id});
     th.textContent = content;
     return th;
   }
