@@ -31,3 +31,13 @@ th {
   background-color: green;
   height: 20px;
 }
+
+.menu {
+  display: inline-block;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  background-color: white;
+  transform: translate(-50%, -50%);
+  border: 1px solid black;
+}
