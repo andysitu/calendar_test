@@ -11,11 +11,20 @@ var eleFunctions = eF = {
     }
   },
 
-  makeElement: function(type, id) {
+  makeElement: function(type, attributes) {
   // Returns an element and appends an id.
     var element = document.createElement(type);
-    if (typeof id === "string")
-      element.id = id;
+    for (var attr in attributes) {
+      if (attributes.hasOwnProperty(attr)) {
+        element.setAttribute(attr, attributes[attr]);
+      }
+    }
+    for (var i = 2; i < arguments.length; i++) {
+      var child = arguments[i];
+      if (typeof child === 'string')
+        child = document.createTextNode(child);
+      element.appendChild(child);
+    }
     return element;
   },
 
