@@ -50,10 +50,7 @@ var tableMaker = {
   },
   makeTd: function(content, id) {
   // Returns td element.
-    var td = eF.makeElement("td", {id: id});
-    var date = this.makeDateDiv();
-    td.appendChild(date);
-    return td;
+    return eF.makeElement("td", {id: id}, this.makeDateDiv());
   },
   makeDateDiv: function(date) {
     return eleFunctions.makeElement("div", {"class": "date"}, date);
