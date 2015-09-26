@@ -56,9 +56,6 @@ var tableMaker = {
     return td;
   },
   makeDateDiv: function(date) {
-    var dateDiv = eleFunctions.makeElement("div");
-    dateDiv.textContent = date;
-    dateDiv.classList.add("date");
-    return dateDiv;
+    return eleFunctions.makeElement("div", {"class": "date"}, date);
   }
 };
