@@ -11,6 +11,11 @@ table {
 td, th {
   border: solid thin gray;
   white-space: pre-wrap;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 td:hover { background-color: rgb(210, 210, 210); }
