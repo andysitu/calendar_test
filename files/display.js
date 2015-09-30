@@ -32,10 +32,12 @@ var display = {
     }, "TESTING");
 
     document.body.appendChild(menu);
+    this._menuStatus = true;
     return menu;
   },
   removeMenu() {
     var menu = document.getElementById("mainMenu");
     document.body.removeChild(menu);
+    this._menuStatus = false;
   }
 };
