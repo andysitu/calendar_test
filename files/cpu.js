@@ -74,5 +74,9 @@ var cpu = {
       selected[month].splice(index, 1);
     }
     display.select(month, date, status);
+  },
+  addMenu() {
+    var menu = display.createMenu();
+    ui.addMenuHandler(menu);
   }
 };
