@@ -42,21 +42,19 @@ var cpu = {
     switch(inputType) {
       case "nextMonth":
         this.increaseMonth(1); 
-        console.log(this.month, this.year);
         this.makeTable();
         break;
       case "prevMonth":
         this.increaseMonth(-1); 
-        console.log(this.month, this.year);
         this.makeTable();
         break;
       case "today":
         this.setToday();
         this.makeTable();
-        console.log(this.month, this.year);
         break;
       case "clickedTable":
-        this.select(status); break;
+        this.select(status);
+        break;
     }
   },
   select(dateObj) {
