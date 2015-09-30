@@ -28,8 +28,5 @@ var ui = {
   addTableHandler() {
   // appended to table in cpu.makeTable.
     eleFunctions.addHandler("calendarTable", "click", ui.tableClick);
-  },
-  addMenuHandler(element, handler) {
-    element.addEventListener("click", handler);
   }
 };

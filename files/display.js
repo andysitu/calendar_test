@@ -1,5 +1,9 @@
 var display = {
   table: null,
+  _menuStatus: false,
+  getMStatus() {
+    return this._menuStatus;
+  },
   displayMonth(tableFrag, tableHandlerRemover) {
     this.table = tableFrag.firstChild;
     var test = document.getElementById("calendarTable");
