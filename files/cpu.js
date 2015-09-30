@@ -77,6 +77,8 @@ var cpu = {
   },
   addMenu() {
     var menu = display.createMenu();
-    ui.addMenuHandler(menu);
+  },
+  removeMenu() {
+    display.removeMenu();
   }
 };
