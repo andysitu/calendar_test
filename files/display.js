@@ -12,7 +12,7 @@ var display = {
     }
   },
 
-  select(mnoth, date, status) {
+  select(month, date, status) {
     var selectedTd = document.querySelector("#td" + month + "_" + date);
     if (status === true) {
       selectedTd.classList.add("selected");
@@ -21,7 +21,6 @@ var display = {
     }
     
   },
-
   createMenu() {
     var menu = eF.makeElement("div", {
       class: "menu",
@@ -29,6 +28,7 @@ var display = {
     }, "TESTING");
 
     document.body.appendChild(menu);
+    return menu;
   },
   removeMenu() {
     var menu = document.getElementById("mainMenu");
