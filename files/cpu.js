@@ -38,7 +38,7 @@ var cpu = {
     this.month = today.getMonth();
     this.date = today.getDate();
   },
-  processInput(inputType, status) {
+  processInput(inputType, status, e) {
     switch(inputType) {
       case "nextMonth":
         this.increaseMonth(1); 
@@ -53,7 +53,7 @@ var cpu = {
         this.makeTable();
         break;
       case "clickedTable":
-        this.select(status);
+        this.select(status, e.shiftKey, e.ctrlKey);
         if ( display.getMStatus() ) {
           this.removeMenu();
         } else {
