@@ -54,6 +54,11 @@ var cpu = {
         break;
       case "clickedTable":
         this.select(status);
+        if ( display.getMStatus() ) {
+          this.removeMenu();
+        } else {
+          this.addMenu();
+        }
         break;
     }
   },
@@ -76,7 +81,7 @@ var cpu = {
     display.select(month, date, status);
   },
   addMenu() {
-    var menu = display.createMenu();
+    display.createMenu();
   },
   removeMenu() {
     display.removeMenu();
