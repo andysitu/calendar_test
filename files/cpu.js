@@ -68,8 +68,10 @@ var cpu = {
       date = dateObj.date,
       selected = this.selected;
 
-    for (var month in selected)
-      display.select(month, selected[month], false);
+    (function() {
+      for (var month in selected)
+        display.select(month, selected[month], false);
+    })()
     // if (!Array.isArray(selected[month])) {
     //   selected[month] = []; }
 
