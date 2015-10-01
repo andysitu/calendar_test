@@ -1,7 +1,9 @@
 var display = {
   table: null,
   _menuStatus: false,
-  displayMonth(tableFrag, tableHandlerRemover) {
+  displayMonth(month, tableFrag, tableHandlerRemover) {
+    var monthText = eF.getElement("monthText");
+    monthText.textContent = this.monthTranslator(month);
     this.table = tableFrag.firstChild;
     var test = document.getElementById("calendarTable");
     var tableDiv = document.getElementById("tableDiv");
