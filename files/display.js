@@ -41,5 +41,16 @@ var display = {
       document.body.removeChild(menu);
       this._menuStatus = false;
     }
+  },
+  monthTranslator(month) {
+    var months = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"];
+    if (months[month] !== undefined)
+      return months[month];
+    else if (months.indexOf(month) >= 0){
+      return months.indexOf(month);
+    } else {
+      throw new Error("monthTranslator was given " + month);
+    }
   }
 };
