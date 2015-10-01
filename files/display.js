@@ -36,8 +36,10 @@ var display = {
     return menu;
   },
   removeMenu() {
-    var menu = document.getElementById("mainMenu");
-    document.body.removeChild(menu);
-    this._menuStatus = false;
+    if (this._menuStatus == true) {
+      var menu = document.getElementById("mainMenu");
+      document.body.removeChild(menu);
+      this._menuStatus = false;
+    }
   }
 };
