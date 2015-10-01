@@ -9,7 +9,7 @@ table {
 }
 
 td, th {
-  border: solid thin gray;
+  border: solid thin rgb(180,180,180);
   white-space: pre-wrap;
   -webkit-user-select: none;
   -khtml-user-select: none;

@@ -26,9 +26,9 @@ var cpu = {
     this.changeMonth(this.year, month);
   },
   makeTable() {
-    var tableFragment = this.calendar.makeCalendarArray(this.year, this.month);
-    var table = tableMaker.createTable(tableFragment);
-    display.displayMonth(table, ui.removeTableHandler);
+    var calendarArray = this.calendar.makeCalendarArray(this.year, this.month);
+    var table = tableMaker.createTable(calendarArray);
+    display.displayMonth(this.month, table, ui.removeTableHandler);
     ui.addTableHandler();
   },
   setToday() {
