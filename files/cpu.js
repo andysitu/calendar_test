@@ -3,7 +3,7 @@ var cpu = {
   month: 0,
   date: 0,
   calendar: null,
-  selected: {}, // prop: month, with dates stored in array
+  selected: {}, // prop: month, & date
   run: function() {
     this.setToday();
     this.calendar = new Calendar(this.year);
@@ -68,17 +68,22 @@ var cpu = {
       date = dateObj.date,
       selected = this.selected;
 
-    if (!Array.isArray(selected[month])) {
-      selected[month] = []; }
+    for (var month in selected)
+      display.select(month, selected[month], false);
+    // if (!Array.isArray(selected[month])) {
+    //   selected[month] = []; }
 
-    var index = selected[month].indexOf(date),
-      status = index < 0;
-    if (index < 0) {
-      selected[month].push(date);
-    } else {
-      selected[month].splice(index, 1);
-    }
-    display.select(month, date, status);
+    // var index = selected[month].indexOf(date),
+    //   status = index < 0;
+    // if (index < 0) {
+    //   selected[month].push(date);
+    // } else {
+    //   selected[month].splice(index, 1);
+    // }
+    var obj = {};
+    obj[month] = date;
+    this.selected = obj;
+    display.select(month, date, true);
   },
   addMenu() {
     display.createMenu();
