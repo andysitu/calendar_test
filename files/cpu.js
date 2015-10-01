@@ -65,14 +65,20 @@ var cpu = {
       date = dateObj.date,
       selected = this.selected;
 
-    (function() {
-      for (var month in selected)
-        display.select(month, selected[month], false);
-    })()
-    var obj = {};
-    obj[month] = date;
-    this.selected = obj;
-    display.select(month, date, true);
+    this.selected = {
+      month: month,
+      date: date
+    };
+    if (selected !== null && selected.month == month && selected.date == date) {
+      display.select(month, date, false);
+      sameFunct();
+    } else {
+      if (selected !== null) {
+        display.select(selected.month, selected.date, false);
+      }
+      display.select(month, date, true);
+      diffFunct();
+    }
   },
   addMenu() {
     display.createMenu();
