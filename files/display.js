@@ -26,6 +26,9 @@ var display = {
     
   },
   createMenu() {
+    if (this._menuStatus == true) {
+      this.removeMenu();
+    }
     var menu = eF.makeElement("div", {
       class: "menu",
       id: "mainMenu"
