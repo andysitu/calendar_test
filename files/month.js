@@ -1,7 +1,7 @@
 function Month(year, month) {
-  var instance = new Date(year, month);
-  this.year = instance.getFullYear();
-  this.month = instance.getMonth();
+  var date = new Date(year, month);
+  this.year = date.getFullYear();
+  this.month = date.getMonth();
   this.days = {};
   this.makeDays();
 }
