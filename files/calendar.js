@@ -54,18 +54,23 @@ Calendar.prototype.getMonth = function(year, month) {
 // Returns month instances. Uses makeYear because by
 // adjusting for month, it might get a year that doesn't
 // exist yet.
+  if (!(year in this._years)) {
+    this.makeYear(year);
+  }
   if (month < 0) {
     return this.getMonth(year - 1, 12 + month);
   } else if (month > 11) {
     return this.getMonth(year + 1, month - 12);
   }
-  if (!(year in this._years)) {
-    this.makeYear(year);
-  }
   return this._years[year][month];  
 };
 
 Calendar.prototype.makeCalendarArray = function(year, month) {
+// Makes an array containing current month's days & prev & next months'
+// days to fill up the entire week. Justed for display.
+
+// Uses makeArrayWithWeeks to make array in array containing day info
+// formatted already as objects.
   var daysList = this.getMonthList(year, month);
   daysList = this.addPrevMonthDays(year, month, daysList);
   daysList = this.addNextMonthDays(year, month, daysList);
