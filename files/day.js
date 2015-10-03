@@ -1,4 +1,4 @@
-function Day(year, month, date, content) { 
+function Day(year, month, date) { 
   Object.defineProperty(this, "instance", {
     value: this.getInstance(year, month, date),
     writable: false,
@@ -9,7 +9,7 @@ function Day(year, month, date, content) {
   this.month = this.instance.getMonth();
   this.year = this.instance.getFullYear();
   this.dayOfWeek = this.instance.getDay();
-  this.content = (content || "");
+  this.content = {};
 }
 
 Day.prototype.getInstance = function(year, month, date) {
