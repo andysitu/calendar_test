@@ -65,18 +65,18 @@ Calendar.prototype.getDay = function(year, month, date) {
 }
 
 Calendar.prototype.makeCalendarArray = function(year, month) {
-// Makes an array containing current month's days & prev & next months'
-// days to fill up the entire week. Justed for display.
+// Formats for use in the calendar table.
 
-// Uses makeArrayWithWeeks to make array in array containing day info
-// formatted already as objects.
+// Uses formatDaysList to the monthList that already contains obj containing
+// the date info in obj to have arrays for a week that contains an array containing
+// the date objects.
   var daysList = this.getMonthList(year, month);
   daysList = this.addPrevMonthDays(year, month, daysList);
   daysList = this.addNextMonthDays(year, month, daysList);
-  return this.makeArrayWithWeeks(daysList);
+  return this.formatDaysList(daysList);
 };
 
-Calendar.prototype.makeArrayWithWeeks = function(daysList) {
+Calendar.prototype.formatDaysList = function(daysList) {
   var outerArray = range(daysList.length / 7);
   var innerArray = range(0, 7, 1);
   return outerArray.map(function(prevWeek) {
@@ -95,8 +95,8 @@ Calendar.prototype.addNextMonthDays = function(year, month, daysList) {
   return daysList.concat(nextMonthDays);
 };
 
-Calendar.prototype.getNextMonthDays = function(year, month, lastDayOfWeek) {
-  var nextMonthDates = range (1, lastDayOfWeek + 1);
+Calendar.prototype.getNextMonthDays = function(year, month, remainingDaysOfWeek) {
+  var nextMonthDates = range (1, remainingDaysOfWeek + 1);
   return this.getDays(year, month + 1, nextMonthDates);
 };
 
