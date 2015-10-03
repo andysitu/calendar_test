@@ -20,6 +20,13 @@ Day.prototype.makeNextDay = function() {
   return new Day(this.year, this.month, this.date + 1);
 };
 
+Day.prototype.addContent = function(name, type, content) {
+  this.content[name] = {
+    type: type,
+    content: content
+  };
+};
+
 Day.prototype.getContent = function() {
   var day = {},
     properties = Object.keys(this);
