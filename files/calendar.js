@@ -26,6 +26,20 @@ Calendar.prototype.makeYear = function(year) {
 Calendar.prototype.makeMonth = function(year, month) {
   return new Month(year, month );
 }
+Calendar.prototype.getMonth = function(year, month) {
+// Returns month instances. Uses makeYear because by
+// adjusting for month, it might get a year that doesn't
+// exist yet.
+  if (!(year in this._years)) {
+    this.makeYear(year);
+  }
+  if (month < 0) {
+    return this.getMonth(year - 1, 12 + month);
+  } else if (month > 11) {
+    return this.getMonth(year + 1, month - 12);
+  }
+  return this._years[year][month];  
+};
 
 Calendar.prototype.getMonthList = function(year, month) {
 // Returns array of objects of days containing values
@@ -49,21 +63,6 @@ Calendar.prototype.getDay = function(year, month, date) {
   }
   return this.getMonth(year, month).getDay(date);
 }
-
-Calendar.prototype.getMonth = function(year, month) {
-// Returns month instances. Uses makeYear because by
-// adjusting for month, it might get a year that doesn't
-// exist yet.
-  if (!(year in this._years)) {
-    this.makeYear(year);
-  }
-  if (month < 0) {
-    return this.getMonth(year - 1, 12 + month);
-  } else if (month > 11) {
-    return this.getMonth(year + 1, month - 12);
-  }
-  return this._years[year][month];  
-};
 
 Calendar.prototype.makeCalendarArray = function(year, month) {
 // Makes an array containing current month's days & prev & next months'
