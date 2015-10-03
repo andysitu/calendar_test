@@ -6,7 +6,7 @@ var cpu = {
   selected: null, // prop: month, & date
   run: function() {
     this.setToday();
-    this.calendar = new Calendar(this.year);
+    stor.addCal( new Calendar(this.year), "default" , 68);
 
     this.makeTable();    
   },
@@ -26,7 +26,7 @@ var cpu = {
     this.changeMonth(this.year, month);
   },
   makeTable() {
-    var calendarArray = this.calendar.makeCalendarArray(this.year, this.month);
+    var calendarArray = stor.getCal().makeCalendarArray(this.year, this.month);
     var table = tableMaker.createTable(calendarArray);
     display.displayMonth(this.month, table, ui.removeTableHandler);
     ui.addTableHandler();
