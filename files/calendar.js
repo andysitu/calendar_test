@@ -87,29 +87,31 @@ Calendar.prototype.formatDaysList = function(daysList) {
 };
 
 Calendar.prototype.addNextMonthDays = function(year, month, daysList) {
+// Adds days to last week of month to make it 7 days
+// Returns these days concated to daysList
   var remainingDays = 7 - daysList.length % 7; // gets amount of days left to make week == 7 days
   if (remainingDays == 7) {
     return daysList;
   }
-  var nextMonthDays = this.getNextMonthDays(year, month, remainingDays);
+  var nextMonthDays = this.remainingDays(year, month + 1, remainingDays);
   return daysList.concat(nextMonthDays);
 };
 
-Calendar.prototype.getNextMonthDays = function(year, month, remainingDaysOfWeek) {
-  var nextMonthDates = range (1, remainingDaysOfWeek + 1);
+Calendar.prototype.remainingDaysOfWeek = function(year, month, remainingDays) {
+  var nextMonthDates = range (1, remainingDays + 1);
   return this.getDays(year, month + 1, nextMonthDates);
 };
 
 Calendar.prototype.addPrevMonthDays = function(year, month, daysList) {
   var firstDayOfWeek = daysList[0].dayOfWeek;
-  var prevMonthDays = this.getPrevMonthDays(year, month, firstDayOfWeek);
+  var prevMonthDays = this.prevDaysOfWeek(year, month, firstDayOfWeek);
   return prevMonthDays.concat(daysList);
 };
 
-Calendar.prototype.getPrevMonthDays = function(year, month, firstDayOfWeek) {
+Calendar.prototype.prevDaysOfWeek = function(year, month, numDays) {
 // firstDayOfWeek refers to the current month. Want to get the days before that
 // date to complete the entire week.
-  var negativeDayValues = range(firstDayOfWeek - 1, -1, -1).map(function(value){ return -value; });
+  var negativeDayValues = range(numDays - 1, -1, -1).map(function(value){ return -value; });
   return this.getDays(year, month, negativeDayValues);
 };
 
