@@ -87,8 +87,11 @@ Calendar.prototype.makeArrayWithWeeks = function(daysList) {
 };
 
 Calendar.prototype.addNextMonthDays = function(year, month, daysList) {
-  var lastDayOfWeek = 7 - daysList.length % 7;
-  var nextMonthDays = this.getNextMonthDays(year, month, lastDayOfWeek);
+  var remainingDays = 7 - daysList.length % 7; // gets amount of days left to make week == 7 days
+  if (remainingDays == 7) {
+    return daysList;
+  }
+  var nextMonthDays = this.getNextMonthDays(year, month, remainingDays);
   return daysList.concat(nextMonthDays);
 };
 
