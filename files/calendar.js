@@ -97,15 +97,16 @@ Calendar.prototype.addNextMonthDays = function(year, month, daysList) {
   return daysList.concat(nextMonthDays);
 };
 
-Calendar.prototype.remainingDaysOfWeek = function(year, month, remainingDays) {
-  var nextMonthDates = range (1, remainingDays + 1);
-  return this.getDays(year, month + 1, nextMonthDates);
-};
-
 Calendar.prototype.addPrevMonthDays = function(year, month, daysList) {
   var firstDayOfWeek = daysList[0].dayOfWeek;
   var prevMonthDays = this.prevDaysOfWeek(year, month, firstDayOfWeek);
   return prevMonthDays.concat(daysList);
+};
+
+
+Calendar.prototype.remainingDaysOfWeek = function(year, month, firstDayOfWeek) {
+  var remainingDays = range (1, firstDayOfWeek + 1);
+  return this.getDays(year, month + 1, nextMonthDates);
 };
 
 Calendar.prototype.prevDaysOfWeek = function(year, month, numDays) {
