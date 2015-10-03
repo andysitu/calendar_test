@@ -1,7 +1,16 @@
 var stor = {
    _calendar: null,
-   getCal: function() {
+   _calendars: {},
+   getCal() {
       return this._calendar;
    },
-   _calendars: {}
+   addCal(calendar, name, key) {
+   // name is the name of the certain calendar. 
+   // key is the keyCode for the corresponding key.
+      this._calendars[name] = {
+         calendar: calendar,
+         key: key
+      };
+      this._calendar = calendar;
+   }
 };
