@@ -11,6 +11,9 @@ var cpu = {
   getType: function() {
     return this._calendarType;
   },
+  getKey: function() {
+    return this._calendarKey;
+  }
   selected: null, // prop: month, & date
   run: function() {
     this.setToday();
