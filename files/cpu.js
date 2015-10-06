@@ -2,9 +2,11 @@ var cpu = {
   year: 0,
   month: 0,
   date: 0,
-  _calendarType: null,
+  _calendarType: undefined,
+  _calendarKey: undefined,
   setType: function(calendarType, key) {
-    this._calendarType = {type: calendarType, key: key};
+    this._calendarType = calendarType;
+    this._calendarKey = key;
   },
   getType: function() {
     return this._calendarType;
