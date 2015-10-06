@@ -13,12 +13,12 @@ var cpu = {
   },
   getKey: function() {
     return this._calendarKey;
-  }
+  },
   selected: null, // prop: month, & date
   run: function() {
     this.setToday();
     stor.addCal( new Calendar(this.year), "default" , 68);
-    this.setType("default", 68)
+    this.setType("default", 68);
     this.makeTable();
   },
   changeMonth(year, month) {
