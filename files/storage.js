@@ -1,6 +1,6 @@
 var stor = {
    _calendars: {},
-   getCal(name) {
+   getCalObj(name) {
       return this._calendars[name];
    },
    addCal(calendar, name, key) {
@@ -10,6 +10,5 @@ var stor = {
          calendar: calendar,
          key: key
       };
-      this._calendar = calendar;
    }
 };
