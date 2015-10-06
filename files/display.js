@@ -31,7 +31,7 @@ var display = {
     var menu = eF.makeElement("div", {
       class: "menu",
       id: "mainMenu"
-    }, eF.makeElement("div", {}, message));
+    }, eF.makeElement("div", {}, message, eF.makeElement("input", {type: "text"}), eF.makeElement("input", {type: "submit"})));
 
     document.body.appendChild(menu);
     this._menuStatus = true;
