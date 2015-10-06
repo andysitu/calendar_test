@@ -65,11 +65,11 @@ var cpu = {
         this.makeTable();
         break;
       case "clickedTable":
-        this.select(status, this.addMenu, this.removeMenu);
+        this.select(status, this.removeMenu, this.addMenu);
         break;
     }
   },
-  select(dateObj, diffFunct, sameFunct) {
+  select(dateObj,sameFunct, diffFunct) {
   // Input: Obj with prop: month & date
   // sameFunct is run if previously selected is same as current.
   // Otherwise, diffFunct is run.
