@@ -2,13 +2,19 @@ var cpu = {
   year: 0,
   month: 0,
   date: 0,
-  calendar: null,
+  _calendarType: null,
+  setType: function(calendarType, key) {
+    this._calendarType = {type: calendarType, key: key};
+  },
+  getType: function() {
+    return this._calendarType;
+  },
   selected: null, // prop: month, & date
   run: function() {
     this.setToday();
     stor.addCal( new Calendar(this.year), "default" , 68);
-
-    this.makeTable();    
+    this.setType("default", 68)
+    this.makeTable();
   },
   changeMonth(year, month) {
     if (month > 11) {
