@@ -37,7 +37,8 @@ var cpu = {
     this.changeMonth(this.year, month);
   },
   makeTable() {
-    var calendarArray = stor.getCal().makeCalendarArray(this.year, this.month);
+    var calObj = stor.getCalObj( this.getType() );
+    var calendarArray = calObj["calendar"]  .makeCalendarArray(this.year, this.month);
     var table = tableMaker.createTable(calendarArray);
     display.displayMonth(this.month, table, ui.removeTableHandler);
     ui.addTableHandler();
