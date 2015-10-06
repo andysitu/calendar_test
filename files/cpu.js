@@ -81,7 +81,7 @@ var cpu = {
     }
   },
   addMenu() {
-    display.createMenu("Testing");
+    display.createInfoMenu("Testing");
   },
   removeMenu() {
     display.removeMenu();

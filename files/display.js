@@ -24,15 +24,21 @@ var display = {
     }
     
   },
-  createMenu(message) {
+  createInfoMenu(message) {
+    var menu = this.createMenu("Enter Information");
+    var div = eF.makeElement("div", {}, message, eF.makeElement("input", {type: "text"}), eF.makeElement("input", {type: "submit"}));
+
+    menu.appendChild(div);
+    document.body.appendChild(menu);
+  },
+  createMenu() {
     if (this._menuStatus == true) {
       this.removeMenu();
     }
     var menu = eF.makeElement("div", {
       class: "menu",
       id: "mainMenu"
-    }, eF.makeElement("div", {}, message, eF.makeElement("input", {type: "text"}), eF.makeElement("input", {type: "submit"})));
-
+    });
     document.body.appendChild(menu);
     this._menuStatus = true;
     return menu;
