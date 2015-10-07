@@ -103,9 +103,9 @@ var cpu = {
     }
   },
   addMenu() {
-    display.createInfoMenu("Enter Info");
+    menu.createInfoMenu("Enter Info");
   },
   removeMenu() {
-    display.removeInfoMenu();
+    menu.removeInfoMenu();
   }
 };
