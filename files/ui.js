@@ -5,10 +5,10 @@ var ui = {
     eleFunctions.addHandler("today", "click", this.today);
   },
   nextMonth: function(e) {
-    cpu.processInput("nextMonth");
+    cpu.nextMonth();
   },
   prevMonth: function(e) {
-    cpu.processInput("prevMonth");
+    cpu.prevMonth();
   },
   tableClick: function(e) {
     var id = e.target.id;

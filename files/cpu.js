@@ -38,7 +38,7 @@ var cpu = {
   },
   makeTable() {
     var calObj = stor.getCalObj( this.getType() );
-    var calendarArray = calObj["calendar"]  .makeCalendarArray(this.year, this.month);
+    var calendarArray = calObj["calendar"].makeCalendarArray(this.year, this.month);
     var table = tableMaker.createTable(calendarArray);
     display.displayMonth(this.month, table, ui.removeTableHandler);
     ui.addTableHandler();
@@ -50,16 +50,16 @@ var cpu = {
     this.month = today.getMonth();
     this.date = today.getDate();
   },
+  nextMonth() {
+    this.increaseMonth(1); 
+    this.makeTable();
+  },
+  prevMonth() {
+    this.increaseMonth(-1); 
+    this.makeTable();
+  },
   processInput(inputType, status, e) {
     switch(inputType) {
-      case "nextMonth":
-        this.increaseMonth(1); 
-        this.makeTable();
-        break;
-      case "prevMonth":
-        this.increaseMonth(-1); 
-        this.makeTable();
-        break;
       case "today":
         this.setToday();
         this.makeTable();
@@ -88,6 +88,7 @@ var cpu = {
       this.selected = null;
     } else {
       if (selected !== null) {
+        // deselect on calendar
         display.select(selected.month, selected.date, false);
       }
       display.select(month, date, true);
