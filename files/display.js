@@ -24,12 +24,19 @@ var display = {
     }
     
   },
+  addMenu(menu) {
+    document.body.appendChild(menu);
+  },
+  delMenu(id) {
+    var menu = document.getElementById(id);
+    document.body.removeChild(menu);
+  },
   createInfoMenu(message) {
     var menu = this.createMenu("infoMenu");
     var div = eF.makeElement("div", {}, message, eF.makeElement("input", {type: "text"}), eF.makeElement("input", {type: "submit"}));
 
     menu.appendChild(div);
-    document.body.appendChild(menu);
+    this.addMenu(menu);
   },
   removeInfoMenu() {
     this.removeMenu("infoMenu");
@@ -47,8 +54,7 @@ var display = {
   },
   removeMenu(id) {
     if (this._menuStatus == true) {
-      var menu = document.getElementById(id);
-      document.body.removeChild(menu);
+      this.delMenu(id);
       this._menuStatus = false;
     }
   },
