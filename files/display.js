@@ -25,19 +25,19 @@ var display = {
     
   },
   createInfoMenu(message) {
-    var menu = this.createMenu("Enter Information");
+    var menu = this.createMenu("infoMenu");
     var div = eF.makeElement("div", {}, message, eF.makeElement("input", {type: "text"}), eF.makeElement("input", {type: "submit"}));
 
     menu.appendChild(div);
     document.body.appendChild(menu);
   },
-  createMenu() {
+  createMenu(id) {
     if (this._menuStatus == true) {
       this.removeMenu();
     }
     var menu = eF.makeElement("div", {
       class: "menu",
-      id: "mainMenu"
+      id: id
     });
     document.body.appendChild(menu);
     this._menuStatus = true;
