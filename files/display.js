@@ -42,7 +42,6 @@ var display = {
       class: "menu",
       id: id
     });
-    document.body.appendChild(menu);
     this._menuStatus = true;
     return menu;
   },
