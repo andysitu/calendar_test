@@ -26,6 +26,7 @@ var cpu = {
     this.selected = null;
   },
   changeMonth(year, month) {
+    this.reset();
     if (month > 11) {
       this.changeMonth(year + 1, month - 12);
     } else if (month < 0) {
@@ -33,6 +34,7 @@ var cpu = {
     } else {
       this.month = month;
       this.year = year;
+      this.date = 0;
     }
   },
   increaseMonth(value) {
