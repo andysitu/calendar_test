@@ -93,7 +93,7 @@ Calendar.prototype.addNextMonthDays = function(year, month, daysList) {
   if (remainingDays == 7) {
     return daysList;
   }
-  var nextMonthDays = this.remainingDays(year, month + 1, remainingDays);
+  var nextMonthDays = this.remainingDaysOfWeek(year, month + 1, remainingDays);
   return daysList.concat(nextMonthDays);
 };
 
@@ -106,7 +106,7 @@ Calendar.prototype.addPrevMonthDays = function(year, month, daysList) {
 
 Calendar.prototype.remainingDaysOfWeek = function(year, month, firstDayOfWeek) {
   var remainingDays = range (1, firstDayOfWeek + 1);
-  return this.getDays(year, month + 1, nextMonthDates);
+  return this.getDays(year, month + 1, remainingDays);
 };
 
 Calendar.prototype.prevDaysOfWeek = function(year, month, numDays) {
