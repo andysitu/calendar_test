@@ -13,12 +13,14 @@ var ui = {
   tableClick: function(e) {
     var id = e.target.id;
     var idMatch = id.match(/td(\d{1,2})_(\d{1,2})/);
+    // test if user clicked on dates on calendar.
     if (idMatch) {
-      cpu.processInput("clickedTable", {month: idMatch[1], date: idMatch[2]}, e);
+      // idMatch[1] is for the month, [2] is for date
+      cpu.processInput("clickedTable", idMatch[1], idMatch[2], e);
     }
   },
   today: function(e) {
-    cpu.processInput("today");
+    cpu.today("today");
   },
   removeTableHandler(tableElement) {
   // called by cpu.makeTable as higher order function into display 

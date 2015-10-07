@@ -59,24 +59,22 @@ var cpu = {
     this.increaseMonth(-1); 
     this.makeTable();
   },
-  processInput(inputType, status, e) {
+  today() {
+    this._setToday();
+    this.makeTable();
+  },
+  processInput(inputType, month, date, e) {
     switch(inputType) {
-      case "today":
-        this._setToday();
-        this.makeTable();
-        break;
       case "clickedTable":
-        this.select(status, this.removeMenu, this.addMenu);
+        this.select(month, date, this.removeMenu, this.addMenu);
         break;
     }
   },
-  select(dateObj,sameFunct, diffFunct) {
+  select(month, date, sameFunct, diffFunct) {
   // Input: Obj with prop: month & date
   // sameFunct is run if previously selected is same as current.
   // Otherwise, diffFunct is run.
-    var month = dateObj.month,
-      date = dateObj.date,
-      selected = this.selected;
+    var selected = this.selected;
 
     this.selected = {
       month: month,
