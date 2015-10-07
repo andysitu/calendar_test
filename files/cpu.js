@@ -16,7 +16,7 @@ var cpu = {
   },
   selected: null, // prop: month, & date
   run: function() {
-    this.setToday();
+    this._setToday();
     stor.addCal( new Calendar(this.year), "default" , 68);
     this.setType("default", 68);
     this.makeTable();
@@ -43,7 +43,8 @@ var cpu = {
     display.displayMonth(this.month, table, ui.removeTableHandler);
     ui.addTableHandler();
   },
-  setToday() {
+  _setToday() {
+  // Sets cpu to today's date but doesn't make calendar.
     var today = new Date();
 
     this.year = today.getFullYear();
@@ -61,7 +62,7 @@ var cpu = {
   processInput(inputType, status, e) {
     switch(inputType) {
       case "today":
-        this.setToday();
+        this._setToday();
         this.makeTable();
         break;
       case "clickedTable":
