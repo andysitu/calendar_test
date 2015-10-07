@@ -21,6 +21,10 @@ var cpu = {
     this.setType("default", 68);
     this.makeTable();
   },
+  reset() {
+    this.removeMenu();
+    this.selected = null;
+  },
   changeMonth(year, month) {
     if (month > 11) {
       this.changeMonth(year + 1, month - 12);
