@@ -26,7 +26,6 @@ var cpu = {
     this.selected = null;
   },
   changeMonth(year, month) {
-    this.reset();
     if (month > 11) {
       this.changeMonth(year + 1, month - 12);
     } else if (month < 0) {
@@ -49,8 +48,13 @@ var cpu = {
     display.displayMonth(this.month, table, ui.removeTableHandler);
     ui.addTableHandler();
   },
+  changeTable() {
+    this.makeTable();
+    this.reset();
+  },
   _setToday() {
   // Sets cpu to today's date but doesn't make calendar.
+  // today will do that.
     var today = new Date();
 
     this.year = today.getFullYear();
@@ -59,15 +63,15 @@ var cpu = {
   },
   nextMonth() {
     this.increaseMonth(1); 
-    this.makeTable();
+    this.changeTable();
   },
   prevMonth() {
     this.increaseMonth(-1); 
-    this.makeTable();
+    this.changeTable();
   },
   today() {
     this._setToday();
-    this.makeTable();
+    this.changeTable();
   },
   clicked(month, date) {
     this.select(month, date, this.removeMenu, this.addMenu);
