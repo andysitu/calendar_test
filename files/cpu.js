@@ -89,7 +89,8 @@ var cpu = {
     if (selected !== null && selected.month == month && selected.date == date) {
       // This is for user has clicked on same date twice (for now, to remove menu)
       display.select(month, date, false);
-      sameFunct();
+      if (typeof sameFunct == "function")
+        sameFunct();
       this.selected = null;
     } else {
       if (selected !== null) {
@@ -97,7 +98,8 @@ var cpu = {
         display.select(selected.month, selected.date, false);
       }
       display.select(month, date, true);
-      diffFunct();
+      if (typeof diffFunct == "function")
+        diffFunct();
     }
   },
   addMenu() {
