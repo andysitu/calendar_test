@@ -31,6 +31,9 @@ var display = {
     menu.appendChild(div);
     document.body.appendChild(menu);
   },
+  removeInfoMenu() {
+    this.removeMenu("infoMenu");
+  },
   createMenu(id) {
     if (this._menuStatus == true) {
       this.removeMenu();
@@ -43,9 +46,9 @@ var display = {
     this._menuStatus = true;
     return menu;
   },
-  removeMenu() {
+  removeMenu(id) {
     if (this._menuStatus == true) {
-      var menu = document.getElementById("mainMenu");
+      var menu = document.getElementById(id);
       document.body.removeChild(menu);
       this._menuStatus = false;
     }
