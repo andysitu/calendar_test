@@ -16,7 +16,7 @@ var ui = {
     // test if user clicked on dates on calendar.
     if (idMatch) {
       // idMatch[1] is for the month, [2] is for date
-      cpu.processInput("clickedTable", idMatch[1], idMatch[2], e);
+      cpu.clicked(idMatch[1], idMatch[2]);
     }
   },
   today: function(e) {

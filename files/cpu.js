@@ -69,12 +69,8 @@ var cpu = {
     this._setToday();
     this.makeTable();
   },
-  processInput(inputType, month, date, e) {
-    switch(inputType) {
-      case "clickedTable":
-        this.select(month, date, this.removeMenu, this.addMenu);
-        break;
-    }
+  clicked(month, date) {
+    this.select(month, date, this.removeMenu, this.addMenu);
   },
   select(month, date, sameFunct, diffFunct) {
   // Input: Obj with prop: month & date
