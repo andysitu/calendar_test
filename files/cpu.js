@@ -107,5 +107,8 @@ var cpu = {
   },
   removeMenu() {
     menu.removeInfoMenu();
+  },
+  addInfo(info) {
+    console.log(info);
   }
 };
