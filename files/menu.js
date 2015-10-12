@@ -7,7 +7,7 @@ var menu = {
 
 
     var div = eF.makeElement("tr", {}, eF.makeElement("td", {}, "Enter Info: "), 
-      eF.makeElement("td", {}, eF.makeElement("input", {type: "text"})), 
+      eF.makeElement("td", {id: "info_menu_text"}, eF.makeElement("input", {type: "text"})), 
       eF.makeElement("td", {},  eF.makeElement("input", {id: "submitInfoButton", type: "submit"})));
 
     menu.appendChild(div);
