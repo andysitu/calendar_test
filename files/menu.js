@@ -1,8 +1,8 @@
 var menu = {
    _menuStatus: false,
-   createInfoMenu(message) {
+   createInfoMenu(x, y) {
     var menu = this.createMenu("infoMenu");
-    var div = eF.makeElement("div", {}, message, eF.makeElement("input", {type: "text"}), 
+    var div = eF.makeElement("div", {}, "Enter Info: ", eF.makeElement("input", {type: "text"}), 
       eF.makeElement("input", {id: "infoSubmit", type: "submit"}));
 
     menu.appendChild(div);

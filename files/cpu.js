@@ -99,11 +99,11 @@ var cpu = {
       }
       display.select(month, date, true);
       if (typeof diffFunct == "function")
-        diffFunct();
+        diffFunct(x, y);
     }
   },
-  addMenu() {
-    menu.createInfoMenu("Enter Info: ");
+  addMenu(x, y) {
+    menu.createInfoMenu(x, y);
   },
   removeMenu() {
     menu.removeInfoMenu();
