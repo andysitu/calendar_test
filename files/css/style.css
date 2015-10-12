@@ -18,9 +18,9 @@ td, th {
   user-select: none;
 }
 
-td:hover { background-color: rgb(210, 210, 210); }
+td.calendar_cell:hover { background-color: rgb(210, 210, 210); }
 
-td {
+td.calendar_cell {
   vertical-align:top;
   background-color: rgb(224, 224, 224);
   height: 120px;
