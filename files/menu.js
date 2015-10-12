@@ -2,6 +2,8 @@ var menu = {
    _menuStatus: false,
    createInfoMenu(x, y) {
     var menu = this.createMenu("infoMenu");
+    menu.style.left = x + "px";
+    menu.style.top = y + "px";
     var div = eF.makeElement("div", {}, "Enter Info: ", eF.makeElement("input", {type: "text"}), 
       eF.makeElement("input", {id: "infoSubmit", type: "submit"}));
 
