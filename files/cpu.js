@@ -72,6 +72,7 @@ var cpu = {
   today() {
     this._setToday();
     this.changeTable();
+    this.select(this.month, this.date);
   },
   clickedDate(month, date, x, y) {
     this.select(month, date, x, y, this.removeMenu, this.addMenu);
