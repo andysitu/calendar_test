@@ -3,6 +3,9 @@ var ui = {
     eleFunctions.addHandler("nextMonth", "click", this.nextMonth);
     eleFunctions.addHandler("prevMonth", "click", this.prevMonth);
     eleFunctions.addHandler("today", "click", this.today);
+    document.addEventListener("keydown", function(e) {
+      ui.keypressed(e.keyCode); 
+    });
   },
   nextMonth: function(e) {
     cpu.nextMonth();
@@ -38,5 +41,10 @@ var ui = {
       cpu.addInfo(text.value); 
       text.value = ""; 
     });
+  },
+  keypressed(key) {
+    if (key == 27) {
+      cpu.escKeypressed();
+    }
   }
 };
