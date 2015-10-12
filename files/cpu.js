@@ -106,8 +106,11 @@ var cpu = {
   addMenu(x, y) {
     menu.createInfoMenu(x, y);
   },
-  removeMenu() {
-    menu.removeInfoMenu();
+  removeMenu(type) {
+    if (type == "info")
+      menu.removeInfoMenu();
+    else
+      menu.removeMenu();
   },
   addInfo(info) {
     console.log(info);
