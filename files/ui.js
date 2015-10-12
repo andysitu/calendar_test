@@ -34,6 +34,6 @@ var ui = {
   submitInfo: function() {
     var button = document.getElementById("submitInfoButton");
     var text = document.getElementById("info_menu_text");
-    button.addEventListener("click", function(e) { console.log(text.textContent); text.textContent = ""; })
+    button.addEventListener("click", function(e) { console.log(text.value); text.value = ""; })
   }
 };
