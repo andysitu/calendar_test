@@ -29,7 +29,8 @@ var display = {
   },
   removeMenu(id) {
     var menu = document.getElementById(id);
-    document.body.removeChild(menu);
+    if (menu !== undefined) 
+      document.body.removeChild(menu);
   },
   
   monthTranslator(month) {
