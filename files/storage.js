@@ -14,5 +14,9 @@ var stor = {
    store(name, obj) {
       localStorage.setItem(name, JSON.stringify(obj));
    },
+   get(name) {
+      var obj = localStorage.getItem(name);
+      return JSON.parse(obj); // null is returned if undefined
+   }
    }
 };
