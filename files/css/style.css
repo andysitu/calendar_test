@@ -41,10 +41,7 @@ th {
   height: 250px;
   width: 450px;
   display: inline-block;
-  position: fixed;
-  left: 50%;
-  top: 50%;
+  position: absolute;
   background-color: white;
-  transform: translate(-50%, -50%);
   border: 1px solid black;
 }
