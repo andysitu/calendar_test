@@ -17,6 +17,8 @@ var stor = {
    get(name) {
       var obj = localStorage.getItem(name);
       return JSON.parse(obj); // null is returned if undefined
-   }
+   },
+   del(name) {
+      localStorage.removeItem(name);
    }
 };
