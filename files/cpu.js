@@ -111,5 +111,8 @@ var cpu = {
   },
   addInfo(info) {
     console.log(info);
+  },
+  escKeypressed() {
+    this.removeMenu();
   }
 };
