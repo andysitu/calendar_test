@@ -32,8 +32,15 @@ var menu = {
     return menu;
   },
   removeMenu(id) {
+  // if id is undefined, then it'll delete all menus according to menuTypes
     if (this._menuStatus == true) {
-      display.removeMenu(id);
+      if (id == undefined) {
+        this.menuTypes.forEach(function(menuType){
+          display.removeMenu(menuType); // removeMenu checks if it exists first.
+        });
+      } else {
+        display.removeMenu(id);
+      }
       this._menuStatus = false;
     }
   }
