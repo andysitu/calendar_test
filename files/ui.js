@@ -46,6 +46,14 @@ var ui = {
     switch(key) {
       case 27: //esc key
         cpu.escKeypressed(); break;
+      case 37: // left key
+        break;
+      case 38: // up key
+        break;
+      case 39: // right key
+        break;
+      case 40: // down key
+        break;
     }
   }
 };
