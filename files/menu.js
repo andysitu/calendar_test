@@ -16,9 +16,6 @@ var menu = {
 
     ui.submitInfo(); // adds event handler to submit button
   },
-  removeInfoMenu() {
-    this.removeMenu("infoMenu");
-  },
   
   createMenu(id) {
     if (this._menuStatus == true) {
