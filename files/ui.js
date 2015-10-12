@@ -43,8 +43,9 @@ var ui = {
     });
   },
   keypressed(key) {
-    if (key == 27) {
-      cpu.escKeypressed();
+    switch(key) {
+      case 27: //esc key
+        cpu.escKeypressed(); break;
     }
   }
 };
