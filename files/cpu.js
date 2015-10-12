@@ -73,10 +73,10 @@ var cpu = {
     this._setToday();
     this.changeTable();
   },
-  clickedDate(month, date) {
-    this.select(month, date, this.removeMenu, this.addMenu);
+  clickedDate(month, date, x, y) {
+    this.select(month, date, x, y, this.removeMenu, this.addMenu);
   },
-  select(month, date, sameFunct, diffFunct) {
+  select(month, date, x, y, sameFunct, diffFunct) {
   // Input: Obj with prop: month & date
   // sameFunct is run if previously selected is same as current.
   // Otherwise, diffFunct is run.
