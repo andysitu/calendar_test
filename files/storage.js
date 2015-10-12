@@ -10,5 +10,9 @@ var stor = {
          calendar: calendar,
          key: key
       };
+   },
+   store(name, obj) {
+      localStorage.setItem(name, JSON.stringify(obj));
+   },
    }
 };
