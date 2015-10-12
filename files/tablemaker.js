@@ -32,7 +32,7 @@ var tableMaker = {
     var tr = eF.makeElement("tr");
     weekArray.forEach(function(dayObj){ // Makes td for dates
       var id = makeId(dayObj.month, dayObj.date);
-      var td = eleFunctions.makeElement("td", {id: id}, this.makeDateDiv(dayObj.date));
+      var td = eleFunctions.makeElement("td", {class: "calendar_cell", id: id}, this.makeDateDiv(dayObj.date));
       tr.appendChild(td);
     }, this);
     return tr;
