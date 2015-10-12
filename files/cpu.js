@@ -73,7 +73,7 @@ var cpu = {
     this._setToday();
     this.changeTable();
   },
-  clicked(month, date) {
+  clickedDate(month, date) {
     this.select(month, date, this.removeMenu, this.addMenu);
   },
   select(month, date, sameFunct, diffFunct) {
@@ -103,7 +103,7 @@ var cpu = {
     }
   },
   addMenu() {
-    menu.createInfoMenu("Enter Info");
+    menu.createInfoMenu("Enter Info: ");
   },
   removeMenu() {
     menu.removeInfoMenu();
