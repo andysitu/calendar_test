@@ -5,10 +5,12 @@ var menu = {
     menu.style.left = x + "px";
     menu.style.top = y + "px";
     var div = eF.makeElement("div", {}, "Enter Info: ", eF.makeElement("input", {type: "text"}), 
-      eF.makeElement("input", {id: "infoSubmit", type: "submit"}));
+      eF.makeElement("input", {id: "submitInfoButton", type: "submit"}));
 
     menu.appendChild(div);
     display.addMenu(menu);
+
+    ui.submitInfo(); // adds event handler to submit button
   },
   removeInfoMenu() {
     this.removeMenu("infoMenu");

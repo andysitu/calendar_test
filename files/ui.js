@@ -30,5 +30,9 @@ var ui = {
   addTableHandler() {
   // appended to table in cpu.makeTable.
     eleFunctions.addHandler("calendarTable", "click", ui.tableClick);
+  },
+  submitInfo: function() {
+    var button = document.getElementById("submitInfoButton");
+    button.addEventListener("click", function(e) { console.log("You clicked on submit"); })
   }
 };
