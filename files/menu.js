@@ -4,8 +4,9 @@ var menu = {
     var menu = this.createMenu("infoMenu");
     menu.style.left = x + "px";
     menu.style.top = y + "px";
-    var div = eF.makeElement("div", {}, "Enter Info: ", eF.makeElement("input", {type: "text"}), 
-      eF.makeElement("input", {id: "submitInfoButton", type: "submit"}));
+
+
+    var div = eF.makeElement("tr", {}, eF.makeElement("td", {}, "Enter Info: "), eF.makeElement("td", {}, eF.makeElement("input", {type: "text"})), eF.makeElement("td", {},  eF.makeElement("input", {id: "submitInfoButton", type: "submit"})));
 
     menu.appendChild(div);
     display.addMenu(menu);
