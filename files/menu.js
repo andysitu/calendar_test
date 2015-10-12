@@ -1,4 +1,5 @@
 var menu = {
+  menuTypes: ["infoMenu"],
    _menuStatus: false,
    createInfoMenu(x, y) {
     var menu = this.createMenu("infoMenu");
