@@ -55,5 +55,8 @@ var ui = {
       case 40: // down key
         break;
     }
+  },
+  addCloseMenu(ele) {
+    eleFunctions.addHandler(ele, "click", cpu.removeMenu);
   }
 };
