@@ -6,12 +6,16 @@ var menu = {
     menu.style.left = x + "px";
     menu.style.top = y + "px";
 
+    // close button of menu;
+    var menuClose = eF.makeElement("div", {id: menuClose}, "close");
+    ui.addCloseMenu(menuClose);
+
     // Elements inside the menu
     var div = 
       eF.makeElement("tr", {}, eF.makeElement("td", {}, "Enter Info: "), 
         eF.makeElement("td", {}, eF.makeElement("input", {type: "text", id: "info_menu_text"})), 
         eF.makeElement("td", {},  eF.makeElement("input", {id: "submitInfoButton", type: "submit"})),
-        eF.makeElement("div", {id: "menuClose"}, "close")
+        menuClose
       );
 
     menu.appendChild(div);
