@@ -3,13 +3,9 @@ function Calendar(year) {
   this.init(year);
 }
 
-
-
 Calendar.prototype.getToday = function() {
   return copy(this._today);
 };
-
-
 
 Calendar.prototype.init = function(year) {
   this.makeYear(year);
