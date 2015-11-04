@@ -19,4 +19,3 @@ function tester() {
   var dayObj = calendar.getDay(2015, 8, 62);
   console.assert(dayObj.date == 1 && dayObj.month == 10);
 }
-

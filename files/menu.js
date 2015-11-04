@@ -7,7 +7,7 @@ var menu = {
     menu.style.top = y + "px";
 
     // close button of menu;
-    var menuClose = eF.makeElement("div", {id: menuClose}, "close");
+    var menuClose = eF.makeElement("div", {id: "menuClose"}, "close");
     ui.addCloseMenu(menuClose);
 
     // Elements inside the menu
