@@ -1,11 +1,25 @@
 var ui = {
   run: function() {
-    eleFunctions.addHandler("nextMonth", "click", this.nextMonth);
-    eleFunctions.addHandler("prevMonth", "click", this.prevMonth);
-    eleFunctions.addHandler("today", "click", this.today);
+    // eleFunctions.addHandler("nextMonth", "click", this.nextMonth);
+    // eleFunctions.addHandler("prevMonth", "click", this.prevMonth);
+    // eleFunctions.addHandler("today", "click", this.today);
     document.addEventListener("keydown", function(e) {
       ui.keypressed(e.keyCode); 
     });
+    document.addEventListener("click", ui.clickHandler);
+  },
+  clicksList: {
+    nextMonth: ui["nextMonth"],
+    prevMonth: ui["prevMonth"],
+    today: ui["today"]
+  },
+  clickHandler: function(e) {
+    var id = e.target.id;
+    console.log(id, ui.clicksList[id]);
+    if (id in ui.clicksList) {
+      ui.clicksList[id](e);
+    }
+    // ui.tableClick(e);
   },
   nextMonth: function(e) {
     cpu.nextMonth();
@@ -20,7 +34,7 @@ var ui = {
     if (idMatch) {
       // idMatch[1] is for the month, [2] is for date
       cpu.clickedDate(idMatch[1], idMatch[2], e.clientX, e.clientY);
-    } else {
+    } else { // idMatch is null;
       cpu.removeMenu();
     }
   },
