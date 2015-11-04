@@ -6,8 +6,10 @@ var eleFunctions = eF = {
     if (typeof element == 'string') { // element Id
       element = document.getElementById(element);
     } 
-    if (typeof element === 'object') { // element node
+    if (typeof element == 'object') { // element node
       element.addEventListener(event, handler, status);
+    } else {
+      console.log("eleFunctions.addHandler error: " + element);
     }
   },
 
