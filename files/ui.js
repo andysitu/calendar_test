@@ -20,6 +20,8 @@ var ui = {
     if (idMatch) {
       // idMatch[1] is for the month, [2] is for date
       cpu.clickedDate(idMatch[1], idMatch[2], e.clientX, e.clientY);
+    } else {
+      cpu.removeMenu();
     }
   },
   today: function(e) {
