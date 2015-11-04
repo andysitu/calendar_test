@@ -3,10 +3,10 @@ var eleFunctions = eF = {
   // Adds an event handler to document by type either
   //  being the id or the element.
     if (status === undefined) { status = false; }
-    if (typeof element == 'string') { // element Id
+    if (typeof element == "string") { // element Id
       element = document.getElementById(element);
     } 
-    if (typeof element == 'object') { // element node
+    if (typeof element == "object" && element != null) { // element node
       element.addEventListener(event, handler, status);
     } else {
       console.log("eleFunctions.addHandler error: " + element);
